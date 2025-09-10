@@ -12,10 +12,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&family=Poppins:wght@400;600&display=swap"
         rel="stylesheet">
-    <!-- Font Awesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous" defer></script>
     <script src="scripts/date.js" defer></script>
     <script src="scripts/navigation.js" defer></script>
+    <script src="scripts/course-lists.js" defer></script>
+
 </head>
 <body>
     <!-- Header -->
@@ -88,28 +90,32 @@
             </aside>
         </section>
     
-        <!-- Courses -->
-        <section class="courses">
-            <h2 class="bar">Web Certificate Courses</h2>
-    
-            <div class="filters" role="tablist" aria-label="Course filters">
-                <button class="filter is-active" data-filter="all" role="tab" aria-selected="true">All</button>
-                <button class="filter" data-filter="cse" role="tab" aria-selected="false">CSE</button>
-                <button class="filter" data-filter="wdd" role="tab" aria-selected="false">WDD</button>
-            </div>
-    
-            <ul class="course-grid">
-                <li class="course chip" data-cat="wdd">WDD 130</li>
-                <li class="course chip" data-cat="wdd">WDD 131</li>
-                <li class="course chip" data-cat="wdd">WDD 231</li>
-                <li class="course chip" data-cat="cse">CSE 110</li>
-                <li class="course chip" data-cat="cse">CSE 111</li>
-            </ul>
+        <section id="controls">
+            <button data-filter="ALL">All Courses</button>
+            <button data-filter="CSE">CSE Courses</button>
+            <button data-filter="WDD">WDD Courses</button>
         </section>
+        
+        <section id="certificate"></section>
+        <p>Total Credits: <span id="creditTotal">0</span></p>
     </main>
     
     <footer>
-
+        <div class="social-media">
+            <a href="https://github.com/yourusername" target="_blank" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/yourprofile" target="_blank" aria-label="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://twitter.com/yourprofile" target="_blank" aria-label="Twitter">
+                <i class="fab fa-twitter"></i>
+            </a>
+        </div>
+        <p>
+            &copy; <span id="currentyear"></span> Jones G. Mabala, Philippines
+        </p>
+        <p id="lastModified"></p>
     </footer>
 </body>
 </html>
