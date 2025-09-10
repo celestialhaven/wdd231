@@ -1,0 +1,354 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --blue: #316aff;
+    --violet: #6b40f7;
+    --dark: #101012;
+    --light: #f4f6fb;
+    --text: #e9ecf5;
+    --muted: #b9c0d6;
+    --radius: 16px;
+    --shadow: 0 10px 30px rgba(0, 0, 0, .25);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+body {
+    font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+/* Prevent page shift when menu open */
+body.noscroll {
+    overflow: hidden;
+}
+
+.top-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+/* Header layout */
+.site-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-bottom: 1px solid #eee;
+}
+
+/* Brand (logo + name) */
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 40px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.brand img {
+    display: block;
+}
+
+.site-name {
+    font-size: 25px;
+    font-weight: 600;
+}
+
+/* Hamburger hidden by default (desktop-first) */
+.hamburger {
+    display: none;
+    background: none;
+    border: 0;
+    cursor: pointer;
+    line-height: 0;
+}
+
+.primary-nav {
+    display: block !important;
+    width: 100%;
+    background: #1f1f1f;
+    border: 0;
+}
+
+.primary-nav ul {
+    margin: 0;
+    list-style: none;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.primary-nav a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 20px 50px;
+}
+
+.primary-nav a:hover {
+    background: #2a2a2a;
+}
+
+/* Current page highlight (your Home tab in the screenshot) */
+.primary-nav a[aria-current="page"] {
+    background: #3a3a3a;
+    font-weight: 600;
+}
+
+/* Close button base (hidden by default) */
+.nav-close {
+    display: none;
+    background: none;
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+    line-height: 0;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 44px;
+    /* comfortable hit area */
+    height: 44px;
+    border-radius: 8px;
+}
+
+.nav-close:focus-visible,
+.nav-close:hover {
+    outline: none;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+/* main section */
+
+/* spacing */
+.home {
+    padding: 20px;
+}
+
+.home> h1 {
+    font-size: 35px;
+    margin-bottom: .75rem;
+}
+
+/* two-column top row */
+.intro-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    /* wide about, narrow photo */
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* card + heading bar like your mockup */
+.card {
+    background: #e6e7ea;
+    /* light gray body */
+    border: 1px solid #cfd3da;
+    border-radius: 4px;
+    padding: 1rem;
+}
+
+.card p {
+    padding: 10px;
+}
+
+.card> h2 {
+    margin: -1rem -1rem 0.75rem;
+    /* let the bar span the card */
+    padding: .5rem 1rem;
+    background: #2d2d2d;
+    /* dark bar */
+    color: #fff;
+    text-align: center;
+    border-radius: 4px 4px 0 0;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+/* container for the photo */
+.avatar {
+    width: 200px;
+    /* adjust as you like */
+    aspect-ratio: 1 / 1;
+    /* keep it perfectly square */
+    margin: 1rem auto 0;
+    border: 1px solid #b6bac3;
+    border-radius: 8px;
+    overflow: hidden;
+    /* crop to the rounded box */
+    background: #c9ccd3;
+    /* fallback bg */
+}
+
+/* make the image fill and crop nicely */
+.avatar img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* center-crop */
+}
+/* courses title bar (full width) */
+.courses .bar {
+    background: #2d2d2d;
+    color: #fff;
+    text-align: center;
+    padding: .5rem 1rem;
+    border-radius: 6px;
+    margin: 0 0 .75rem 0;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+/* filter chips row */
+.filters {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: .75rem;
+    margin-bottom: .75rem;
+}
+
+.filter {
+    appearance: none;
+    background: #e6e7ea;
+    border: 1px solid #cfd3da;
+    border-radius: 8px;
+    padding: .55rem .75rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.filter.is-active {
+    background: #d7d9de;
+}
+
+/* course chips grid */
+.course-grid {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: .5rem .75rem;
+    margin: 0;
+    padding: 0;
+}
+
+.course.chip {
+    background: #e6e7ea;
+    border: 1px solid #cfd3da;
+    border-radius: 8px;
+    padding: .6rem .75rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* responsive */
+@media (max-width: 900px) {
+    .intro-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .course-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 560px) {
+    .filters {
+        grid-template-columns: 1fr;
+    }
+
+    .course-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Show hamburger on small screens */
+@media (max-width: 1024px) {
+
+    .site-name {
+        font-size: 20px;
+    }
+    
+    .hamburger {
+        display: inline-flex;
+    }
+
+    /* Turn the same nav into an overlay, hidden by default */
+    .primary-nav {
+        position: fixed;
+        inset: 0;
+        z-index: 999;
+        background: var(--dark);
+
+        /* override the desktop display */
+        display: grid !important;
+        /* or: display: flex !important; */
+        place-items: center;
+        /* centers both axes */
+        height: 100dvh;
+        /* full device viewport height */
+
+        /* slide-in behavior */
+        transform: translateX(100%);
+        transition: transform .35s ease;
+    }
+
+    .primary-nav.is-open {
+        transform: translateX(0);
+    }
+
+    /* Uniform, centered stack of links */
+    .primary-nav ul {
+        display: grid;
+        gap: 1rem;
+        width: min(100vw, 200px);
+        margin: 0 auto;
+    }
+
+    .primary-nav li {
+        width: 100%;
+    }
+
+    .primary-nav a {
+        display: block;
+        width: 100%;
+        text-align: center;
+        font-size: 20px;
+        color: #fff;
+    }
+
+    /* optional: collapse the desktop bar spacing */
+    .nav-container {
+        height: 0;
+    }
+
+    .nav-close {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .primary-nav a:hover,
+    .primary-nav a:focus-visible,
+    .primary-nav a[aria-current="page"] {
+        background: rgba(255, 255, 255, .12);
+    }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .primary-nav {
+        transition: none;
+    }
+}

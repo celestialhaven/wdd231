@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 231: Web Frontend Development I</title>
+    <meta name="description"
+        content="Course site for WDD 231: Web Frontend Development I—HTML, CSS, and JavaScript fundamentals, responsive design, and modern tooling.">
+    <meta name="author" content="Jones Mabala">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&family=Poppins:wght@400;600&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <script src="scripts/date.js" defer></script>
+    <script src="scripts/navigation.js" defer></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="top-container">
+            <a class="brand" href="/">
+                <img src="images/profile.webp" alt="Site logo" width="80" height="80">
+                <span class="site-name">Jones Mabala</span>
+            </a>
+            
+            <button class="hamburger" aria-label="Open menu" aria-controls="primary-nav-control" aria-expanded="false">
+                <!-- Hamburger icon (inline SVG) -->
+                <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
+                    <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none" />
+                </svg>
+            </button>
+        </div>
+        <div class="nav-container">
+            <nav id="primary-nav" class="primary-nav" aria-label="Primary">
+                <button class="nav-close" aria-label="Close menu">
+                    <!-- X icon -->
+                    <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
+                        <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none" />
+                    </svg>
+                </button>
+            
+                <ul>
+                    <li><a href="index.html" aria-current="page">Home</a></li>
+                    <li><a href="#">Chamber</a></li>
+                    <li><a href="#">Final</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="home">
+        <h1>Home</h1>
+    
+        <!-- Row 1 -->
+        <section class="intro-grid">
+            <article class="card about">
+                <h2>About Me</h2>
+                <p>
+                    Hi! I'm Jones Mabala, a 32-year-old web developer based in Cagayan de Oro City, Misamis Oriental, Philippines. I'm
+                    happily married and a proud father to two beautiful daughters who are the light of my life. My family is my greatest
+                    source of happiness and motivation in everything I do.
+                </p>
+                <p>
+                    Professionally, I specialize in building modern, responsive websites using WordPress and Elementor. With a passion for
+                    clean design and user-friendly functionality, I enjoy helping businesses and individuals bring their online presence to
+                    life.
+                </p>
+                <p>
+                    Outside of work, I’m an active sports enthusiast. I love playing basketball, and I also enjoy volleyball and flag
+                    football. These outdoor activities keep me energized, disciplined, and balanced in both my personal and professional
+                    life.
+                </p>
+                <p>
+                    I believe in lifelong learning, staying grounded, and doing everything with purpose—both in front of thescreen and out
+                    on the court.
+                </p>
+            </article>
+    
+            <aside class="card photo">
+                <h2>Student Photo</h2>
+                <figure class="avatar">
+                    <img src="images/profile.webp" alt="Jones Mabala" width="600" height="600" loading="lazy"
+                        decoding="async">
+                </figure>
+            </aside>
+        </section>
+    
+        <!-- Courses -->
+        <section class="courses">
+            <h2 class="bar">Web Certificate Courses</h2>
+    
+            <div class="filters" role="tablist" aria-label="Course filters">
+                <button class="filter is-active" data-filter="all" role="tab" aria-selected="true">All</button>
+                <button class="filter" data-filter="cse" role="tab" aria-selected="false">CSE</button>
+                <button class="filter" data-filter="wdd" role="tab" aria-selected="false">WDD</button>
+            </div>
+    
+            <ul class="course-grid">
+                <li class="course chip" data-cat="wdd">WDD 130</li>
+                <li class="course chip" data-cat="wdd">WDD 131</li>
+                <li class="course chip" data-cat="wdd">WDD 231</li>
+                <li class="course chip" data-cat="cse">CSE 110</li>
+                <li class="course chip" data-cat="cse">CSE 111</li>
+            </ul>
+        </section>
+    </main>
+    
+    <footer>
+
+    </footer>
+</body>
+</html>
