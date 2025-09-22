@@ -1,0 +1,243 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* --- Theme tokens (px values only) --- */
+:root {
+    --bar-bg: #dddddd;
+    --ink: #111111;
+    --muted: #cfcfcf;
+    --maxw: 1100px;
+    --radius: 10px;
+}
+
+/* Optional dark theme */
+:root.dark {
+    --bar-bg: #2a2a2a;
+    --ink: #eeeeee;
+    --muted: #333333;
+}
+
+/* Sticky header container */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--bar-bg);
+    color: var(--ink);
+    /* make text inherit theme */
+    border-bottom: 1px solid var(--muted);
+}
+
+/* Single row using flex */
+.header-inner {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.header-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Brand (left) */
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--ink);
+    min-width: 0;
+}
+
+.brand-logo {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    border-radius: 30px;
+}
+
+.brand-name {
+    font-weight: 600;
+    font-size: 16px;
+    white-space: nowrap;
+}
+
+/* Actions (right) */
+.header-actions {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.icon-btn {
+    appearance: none;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: var(--radius);
+    line-height: 1;
+    font-size: 18px;
+    color: var(--ink);
+    /* follows theme */
+}
+
+.menu-toggle .bar {
+    display: block;
+    width: 22px;
+    height: 2px;
+    margin: 4px 0;
+    background: var(--ink);
+}
+
+/* ====== Base (desktop-first) ====== */
+.primary-nav {
+    display: block;
+    position: static;
+    height: auto;
+    background: transparent;
+}
+
+.nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 18px;
+    align-items: center;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+/* hide hamburger on desktop */
+
+/* Make ALL link states follow theme color */
+.nav-list a,
+.nav-list a:visited,
+.nav-list a:active,
+.nav-list a:focus,
+.nav-list a:hover {
+    color: var(--ink);
+    text-decoration: none;
+}
+
+.nav-list a.is-active {
+    text-decoration: underline;
+}
+
+/* Hamburger bars */
+.menu-toggle .bar {
+    display: block;
+    width: 22px;
+    height: 2px;
+    margin: 4px 0;
+    background: var(--ink);
+    transition: 0.3s;
+}
+
+/* Close button (desktop hidden by default) */
+.menu-close {
+    display: none;
+}
+
+/* ====== Mobile (≤ 767px) ====== */
+@media (max-width:767px) {
+    .menu-toggle {
+        display: inline-block;
+    }
+
+    /* Fullscreen overlay menu, colors via variables so dark mode works */
+    .primary-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 0;
+        overflow: hidden;
+        background: var(--bar-bg);
+        transition: height .3s ease;
+        z-index: 100;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .primary-nav.open {
+        height: 100%;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        gap: 24px;
+        text-align: center;
+    }
+
+    /* Link colors still follow theme */
+    .nav-list a,
+    .nav-list a:visited,
+    .nav-list a:active,
+    .nav-list a:focus,
+    .nav-list a:hover {
+        color: var(--ink);
+        font-size: 20px;
+    }
+
+    /* X button styling */
+    .menu-close {
+        position: fixed;
+        /* pin to viewport, not header */
+        top: 12px;
+        right: 16px;
+        z-index: 110;
+        /* above the overlay (overlay z-index is 100) */
+        font-size: 28px;
+        line-height: 1;
+        padding: 8px;
+        border: 0;
+        background: transparent;
+        color: var(--ink);
+        /* respects light/dark theme */
+        cursor: pointer;
+    }
+
+    /* By default on mobile, show hamburger */
+    .menu-toggle {
+        display: inline-block;
+    }
+
+    /* When menu is open, hide hamburger and show X */
+    html.nav-open .menu-toggle {
+        display: none;
+    }
+
+    html.nav-open .menu-close {
+        display: inline-flex;
+    }
+}
+
+.skip-link {
+    position: absolute;
+    left: -9999px;
+}
+
+.skip-link:focus {
+    left: 16px;
+    top: 10px;
+    background: #ffffff;
+    color: #000000;
+    padding: 8px;
+    border: 1px solid #000000;
+}
