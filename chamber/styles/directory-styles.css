@@ -228,6 +228,22 @@
     }
 }
 
+@media (max-width: 480px) {
+    .brand-name {
+        white-space: normal;
+        overflow-wrap: anywhere;
+        line-height: 1.2;
+        display: inline-block;
+        max-width: 220px;
+        /* optional constraint to encourage wrapping */
+    }
+
+    .brand {
+        flex: 1 1 auto;
+        min-width: 0;
+    }
+}
+
 .skip-link {
     position: absolute;
     left: -9999px;
