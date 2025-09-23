@@ -15,11 +15,15 @@
     --radius: 10px;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     font-family: var(--header-font);
 }
 
-p, span, li {
+p,
+span,
+li {
     font-family: var(--text-font);
 }
 
@@ -37,7 +41,6 @@ p, span, li {
     z-index: 50;
     background: var(--bar-bg);
     color: var(--ink);
-    /* make text inherit theme */
     border-bottom: 1px solid var(--muted);
 }
 
@@ -99,7 +102,6 @@ p, span, li {
     line-height: 1;
     font-size: 18px;
     color: var(--ink);
-    /* follows theme */
 }
 
 .menu-toggle .bar {
@@ -132,9 +134,7 @@ p, span, li {
     display: none;
 }
 
-/* hide hamburger on desktop */
-
-/* Make ALL link states follow theme color */
+/* Links follow theme color */
 .nav-list a,
 .nav-list a:visited,
 .nav-list a:active,
@@ -146,16 +146,6 @@ p, span, li {
 
 .nav-list a.is-active {
     text-decoration: underline;
-}
-
-/* Hamburger bars */
-.menu-toggle .bar {
-    display: block;
-    width: 22px;
-    height: 2px;
-    margin: 4px 0;
-    background: var(--ink);
-    transition: 0.3s;
 }
 
 /* Close button (desktop hidden by default) */
@@ -202,31 +192,26 @@ p, span, li {
     content: "";
     position: absolute;
     inset: 0;
-    /* Use the path RELATIVE TO YOUR CSS FILE location (styles/directory-styles.css) */
     background:
-        linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .8)),
+        linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .8)),
         url("../images/city.jpg") center/cover no-repeat;
     z-index: 0;
-    /* behind content */
 }
 
 /* Responsive H1 (PX + media queries) */
 .hero>h1 {
     width: 100%;
-    /* no fixed width */
     max-width: 1100px;
-    /* contains the line length on big screens */
     margin: 0 0 16px 0;
     color: #fff;
     font-weight: 800;
     font-size: 65px;
-    /* base desktop */
     line-height: 1.15;
     letter-spacing: -1.5px;
     text-wrap: balance;
-    /* nicer wrapping (supported in modern browsers) */
     text-align: center;
 }
+
 /* Button row */
 .hero-button {
     display: flex;
@@ -252,14 +237,13 @@ p, span, li {
     line-height: 1;
     cursor: pointer;
     transition: transform 120ms ease, box-shadow 120ms ease, background-color 120ms ease, border-color 120ms ease, color 120ms ease;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .08);
 }
 
-/* Primary (filled) */
 .btn--primary {
     background: #3b82f6;
     border-color: #3b82f6;
-    color: #ffffff;
+    color: #fff;
     font-family: var(--text-font);
 }
 
@@ -269,20 +253,18 @@ p, span, li {
     transform: translateY(-2px);
 }
 
-/* Ghost (outline, for dark hero) */
 .btn--ghost {
     background: transparent;
-    color: #ffffff;
+    color: #fff;
     font-family: var(--text-font);
-    border-color: rgba(255, 255, 255, 0.85);
+    border-color: rgba(255, 255, 255, .85);
 }
 
 .btn--ghost:hover {
-    background: rgba(255, 255, 255, 0.10);
+    background: rgba(255, 255, 255, .10);
     transform: translateY(-2px);
 }
 
-/* Focus states (keyboard) */
 .btn:focus-visible {
     outline: 3px solid #ffffff;
     outline-offset: 2px;
@@ -304,7 +286,7 @@ p, span, li {
 .widget {
     background: #ffffff;
     border-radius: 14px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .08);
     overflow: hidden;
     min-height: 220px;
     display: flex;
@@ -318,7 +300,6 @@ p, span, li {
     font-weight: 700;
     color: #ffffff;
     background: #2f2f2f;
-    /* dark title bar like wireframe */
 }
 
 /* Column sizing via flex-basis (Events wider) */
@@ -326,7 +307,6 @@ p, span, li {
     flex: 1 1 560px;
 }
 
-/* ~half + */
 .weather-current {
     flex: 0 1 300px;
 }
@@ -386,61 +366,173 @@ p, span, li {
     background: rgba(0, 0, 0, 0.04);
 }
 
-/* ===== Business Directory (card layout like example) ===== */
+/* ========================================================================== */
+/* =====================  DIRECTORY (TWO VIEWS)  ============================ */
+/* ========================================================================== */
+
+/* ===== Center the whole Directory block ===== */
 .directory {
-    margin: 32px 0 0 0;
+    max-width: var(--maxw);
+    /* 1100px from your tokens */
+    margin-inline: auto;
+    /* centers the section */
+    padding-inline: 16px;
+    /* comfy side padding */
 }
 
-.directory__grid {
+
+.directory__title {
+    margin: 16px 0 10px;
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+}
+
+/* Toolbar (two buttons: Grid / Table) */
+.directory__toolbar {
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+    justify-content: center;
+    gap: 8px;
+    margin: 0 0 14px 0;
+    border-radius: 10px;
 }
 
-/* 3-up cards on desktop: width ~ (1200 - gaps)/3 ≈ 386px */
-.card {
-    width: 380px;
-    /* adjust if your container differs */
-    background: #ffffff;
+/* Keep the content container centered */
+.directory__content {
+    display: block;
+    max-width: var(--maxw);
+    margin-inline: auto;
+    padding: 20px;
+}
+
+.viewbtn {
+    appearance: none;
+    border: 1px solid #d1d5db;
+    background: #fff;
+    padding: 6px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font: 600 14px/1 var(--text-font, system-ui);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .05);
+}
+
+.viewbtn[aria-pressed="true"] {
+    background: #3b82f6;
+    color: #fff;
+    border-color: #3b82f6;
+}
+
+/* ---- GRID CARDS ---- */
+.dir-grid {
+    display: grid;
+    gap: 18px;
+    grid-template-columns: repeat(3, minmax(260px, 1fr));
+    justify-content: center;
+}
+
+@media (max-width: 980px) {
+    .dir-grid {
+        grid-template-columns: repeat(2, minmax(220px, 1fr));
+    }
+}
+
+@media (max-width: 560px) {
+    .dir-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Card */
+.dir-card {
+    background: #fff;
     border-radius: 14px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, .08);
     padding: 16px;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+    align-items: start;
+    text-align: center;
 }
 
-.card img {
-    width: 100%;
+.dir-card img {
+    width: 120px;
     height: 120px;
     object-fit: contain;
-    border-radius: 10px;
-    background: #f1f3f5;
+    margin: 0 auto 10px;
 }
 
-.card h3 {
-    margin: 12px 0 2px 0;
+.dir-card h3 {
+    margin: 6px 0 2px;
     font-size: 18px;
 }
 
-.card .tagline {
-    margin: 0 0 8px 0;
+.dir-card .tagline {
+    margin: 0 0 8px;
     color: #6b7280;
     font-size: 14px;
 }
 
-.card p {
-    margin: 4px 0;
-    font-size: 15px;
+.dir-card p {
+    margin: 3px 0;
+    font-size: 14px;
 }
 
-.card a {
+.dir-card a {
     color: #3b82f6;
     text-decoration: none;
 }
 
-.card a:hover {
+.dir-card a:hover {
     text-decoration: underline;
 }
+
+/* ---- ZEBRA TABLE ---- */
+.dir-table {
+    width: min(100%, var(--maxw));
+    margin-inline: auto;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, .08);
+    font-size: 14px;
+}
+
+.dir-table thead th {
+    text-align: left;
+    font-weight: 700;
+    background: #f3f4f6;
+    padding: 12px 14px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.dir-table tbody td {
+    padding: 12px 14px;
+    border-bottom: 1px solid #f1f5f9;
+    vertical-align: top;
+}
+
+.dir-table tbody tr:nth-child(odd) {
+    background: #fafafa;
+}
+
+/* zebra striping */
+.dir-table a {
+    color: #3b82f6;
+    text-decoration: none;
+}
+
+.dir-table a:hover {
+    text-decoration: underline;
+}
+
+/* Make long URLs wrap nicely */
+.dir-table td:nth-child(5) {
+    word-break: break-word;
+}
+
+/* ========================================================================== */
 
 footer {
     background-color: #222;
@@ -449,17 +541,15 @@ footer {
     padding: 20px 0;
 }
 
+/* ------------------------------ MEDIA QUERIES ------------------------------ */
+
 @media (max-width: 1200px) {
     .hero>h1 {
         font-size: 48px;
     }
 }
 
-
-/* ===== Responsive (Mobile) ===== */
 @media (max-width: 900px) {
-
-    /* let the three widgets wrap: events on top, then the two weather panels side-by-side if space allows */
     .home__widgets {
         flex-wrap: wrap;
     }
@@ -479,10 +569,15 @@ footer {
     .weather-forecast {
         flex: 1 1 360px;
     }
+
+    /* grid becomes 2-up (already handled above too) */
+    .dir-grid {
+        grid-template-columns: repeat(2, minmax(220px, 1fr));
+    }
 }
 
 /* ====== Mobile (≤ 767px) ====== */
-@media (max-width:767px) {
+@media (max-width: 767px) {
     .header-inner {
         padding: 20px 20px;
     }
@@ -491,7 +586,7 @@ footer {
         display: inline-block;
     }
 
-    /* Fullscreen overlay menu, colors via variables so dark mode works */
+    /* Fullscreen overlay menu */
     .primary-nav {
         position: fixed;
         top: 0;
@@ -517,7 +612,6 @@ footer {
         text-align: center;
     }
 
-    /* Link colors still follow theme */
     .nav-list a,
     .nav-list a:visited,
     .nav-list a:active,
@@ -527,30 +621,20 @@ footer {
         font-size: 20px;
     }
 
-    /* X button styling */
     .menu-close {
         position: fixed;
-        /* pin to viewport, not header */
         top: 12px;
         right: 16px;
         z-index: 110;
-        /* above the overlay (overlay z-index is 100) */
         font-size: 28px;
         line-height: 1;
         padding: 8px;
         border: 0;
         background: transparent;
         color: var(--ink);
-        /* respects light/dark theme */
         cursor: pointer;
     }
 
-    /* By default on mobile, show hamburger */
-    .menu-toggle {
-        display: inline-block;
-    }
-
-    /* When menu is open, hide hamburger and show X */
     html.nav-open .menu-toggle {
         display: none;
     }
@@ -585,7 +669,6 @@ footer {
         font-size: 15px;
     }
 
-    /* stack widgets like the phone mockup */
     .home__widgets {
         gap: 14px;
     }
@@ -593,15 +676,6 @@ footer {
     .weather__content img {
         width: 64px;
         height: 64px;
-    }
-
-    /* directory becomes single column cards */
-    .directory__grid {
-        gap: 14px;
-    }
-
-    .card {
-        width: 100%;
     }
 }
 
@@ -612,7 +686,6 @@ footer {
         line-height: 1.2;
         display: inline-block;
         max-width: 220px;
-        /* optional constraint to encourage wrapping */
     }
 
     .brand {
@@ -624,8 +697,14 @@ footer {
         font-size: 27px;
         letter-spacing: -0.5px;
     }
+
+    /* grid becomes 1-up (already handled above too) */
+    .dir-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
+/* Skip link */
 .skip-link {
     position: absolute;
     left: -9999px;

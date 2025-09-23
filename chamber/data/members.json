@@ -1,0 +1,81 @@
+{
+  "members": [
+    {
+      "id": 1,
+      "name": "Kagay-an Tech Solutions",
+      "address": "Corrales Ave, Cagayan de Oro City",
+      "phone": "+63 917 555 1001",
+      "website": "https://kagayantech.example.com",
+      "image": "images/sample1.png",
+      "membershipLevel": 3,
+      "description": "Custom software, cloud, and IT support for SMEs.",
+      "established": 2016
+    },
+    {
+      "id": 2,
+      "name": "Northern Taste Foods",
+      "address": "Velez St, Cagayan de Oro City",
+      "phone": "+63 917 555 1002",
+      "website": "https://northerntaste.example.com",
+      "image": "images/sample2.png",
+      "membershipLevel": 2,
+      "description": "Food distribution and cold-chain logistics across Mindanao.",
+      "established": 2012
+    },
+    {
+      "id": 3,
+      "name": "CDO Builders & Supply",
+      "address": "Kauswagan, Cagayan de Oro City",
+      "phone": "+63 917 555 1003",
+      "website": "https://cdobuilders.example.com",
+      "image": "images/sample3.png",
+      "membershipLevel": 1,
+      "description": "Construction materials, tools, and on-site delivery.",
+      "established": 2009
+    },
+    {
+      "id": 4,
+      "name": "Mindanao Finance Corp",
+      "address": "Ayala Centrio, Cagayan de Oro City",
+      "phone": "+63 917 555 1004",
+      "website": "https://mindanaofinance.example.com",
+      "image": "images/sample1.png",
+      "membershipLevel": 3,
+      "description": "Lending and SME financing with digital onboarding.",
+      "established": 2018
+    },
+    {
+      "id": 5,
+      "name": "Lumbia Agro Trading",
+      "address": "Lumbia, Cagayan de Oro City",
+      "phone": "+63 917 555 1005",
+      "website": "https://lumbiaagro.example.com",
+      "image": "images/sample2.png",
+      "membershipLevel": 2,
+      "description": "Farm inputs, post-harvest services, and export assistance.",
+      "established": 2014
+    },
+    {
+      "id": 6,
+      "name": "Macajalar Creative Studio",
+      "address": "Magnum St, Cagayan de Oro City",
+      "phone": "+63 917 555 1006",
+      "website": "https://macajalarcreative.example.com",
+      "image": "images/sample3.png",
+      "membershipLevel": 1,
+      "description": "Branding, web design, and content production.",
+      "established": 2020
+    },
+    {
+      "id": 7,
+      "name": "CDO Health & Wellness Center",
+      "address": "Carmen, Cagayan de Oro City",
+      "phone": "+63 917 555 1007",
+      "website": "https://cdohealth.example.com",
+      "image": "images/sample1.png",
+      "membershipLevel": 2,
+      "description": "Preventive care, corporate wellness, and telehealth.",
+      "established": 2015
+    }
+  ]
+}

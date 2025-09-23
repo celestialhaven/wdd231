@@ -67,3 +67,98 @@ document.addEventListener("DOMContentLoaded", function () {
     modifiedElement.textContent = `Last Modified: ${lastModified}`;
   }
 });
+
+const contentEl = document.querySelector('.directory__content');
+const btnGrid   = document.getElementById('viewGrid');
+const btnTable  = document.getElementById('viewTable');
+
+let members = [];
+
+(async function init(){
+  await loadMembers();
+  renderGrid();                 // default view
+  btnGrid.addEventListener('click', renderGrid);
+  btnTable.addEventListener('click', renderTable);
+})();
+
+async function loadMembers(){
+  try {
+    const res = await fetch('./data/members.json', { cache: 'no-store' });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
+    members = data.members || [];
+  } catch (err) {
+    console.error('Failed to load members.json:', err);
+    contentEl.innerHTML = `<p style="padding:12px;">Unable to load members.</p>`;
+  }
+}
+
+function renderGrid(){
+  press(btnGrid);
+  const grid = document.createElement('div');
+  grid.className = 'dir-grid';
+  grid.append(...members.map(cardEl));
+  contentEl.innerHTML = '';
+  contentEl.appendChild(grid);
+}
+
+function renderTable(){
+  press(btnTable);
+
+  const wrap = document.createElement('div');
+  wrap.className = 'table-scroll';
+
+  const table = document.createElement('table');
+  table.className = 'dir-table';
+
+  table.innerHTML = `
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Phone</th>
+        <th>Level</th>
+        <th>Website</th>
+      </tr>
+    </thead>
+    <tbody>
+      ${members.map(m => `
+        <tr>
+          <td data-label="Name">${m.name}</td>
+          <td data-label="Address">${m.address}</td>
+          <td data-label="Phone">${m.phone}</td>
+          <td data-label="Level">${levelLabel(m.membershipLevel)}</td>
+          <td data-label="Website"><a href="${m.website}" target="_blank" rel="noopener">${shortUrl(m.website)}</a></td>
+        </tr>
+      `).join('')}
+    </tbody>
+  `;
+
+  contentEl.innerHTML = '';
+  wrap.appendChild(table);
+  contentEl.appendChild(wrap);
+}
+
+function cardEl(m){
+  const el = document.createElement('article');
+  el.className = 'dir-card';
+  el.innerHTML = `
+    <img src="${m.image}" alt="${m.name} logo" loading="lazy">
+    <h3>${m.name}</h3>
+    <p class="tagline">${levelLabel(m.membershipLevel)}</p>
+    <p><strong>Address:</strong> ${m.address}</p>
+    <p><strong>Phone:</strong> ${m.phone}</p>
+    <p><strong>URL:</strong> <a href="${m.website}" target="_blank" rel="noopener">${shortUrl(m.website)}</a></p>
+  `;
+  return el;
+}
+
+function levelLabel(level){
+  switch (Number(level)) { case 3: return 'Gold Member'; case 2: return 'Silver Member'; default: return 'Member'; }
+}
+function shortUrl(url){
+  try { return new URL(url).hostname.replace(/^www\./,''); } catch { return url; }
+}
+function press(active){
+  [btnGrid, btnTable].forEach(b => b.setAttribute('aria-pressed', String(b === active)));
+}

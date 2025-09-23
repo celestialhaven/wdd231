@@ -125,38 +125,14 @@
             </div>
         </section>
     
-        <!-- ===== Business Directory Cards ===== -->
-        <section class="directory">
-            <div class="directory__grid">
-                <!-- Example cards – dynamically filled with members.json -->
-                <div class="card">
-                    <img src="images/sample1.png" alt="Business Logo" />
-                    <h3>Business Name</h3>
-                    <p class="tagline">Business Tag Line</p>
-                    <p><strong>Email:</strong> info@gmail.com</p>
-                    <p><strong>Phone:</strong> 800-555-1234</p>
-                    <p><strong>URL:</strong> <a href="https://mybusiness.com">mybusiness.com</a></p>
-                </div>
-    
-                <div class="card">
-                    <img src="images/sample2.png" alt="Business Logo" />
-                    <h3>Business Name</h3>
-                    <p class="tagline">Business Tag Line</p>
-                    <p><strong>Email:</strong> info@gmail.com</p>
-                    <p><strong>Phone:</strong> 800-555-1234</p>
-                    <p><strong>URL:</strong> <a href="https://mybusiness.com">mybusiness.com</a></p>
-                </div>
-    
-                <div class="card">
-                    <img src="images/sample3.png" alt="Business Logo" />
-                    <h3>Business Name</h3>
-                    <p class="tagline">Business Tag Line</p>
-                    <p><strong>Email:</strong> info@gmail.com</p>
-                    <p><strong>Phone:</strong> 800-555-1234</p>
-                    <p><strong>URL:</strong> <a href="https://mybusiness.com">mybusiness.com</a></p>
-                </div>
-            </div>
-        </section>
+        <h2 class="directory__title">Business Directory</h2>
+        
+        <div class="directory__toolbar" role="group" aria-label="View options">
+            <button id="viewGrid" class="viewbtn" aria-pressed="true" title="Grid view">▦</button>
+            <button id="viewTable" class="viewbtn" aria-pressed="false" title="Table view">≣</button>
+        </div>
+        
+        <div class="directory__content"></div>
     </main>
 
     <footer>
