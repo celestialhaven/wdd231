@@ -6,11 +6,21 @@
 
 /* --- Theme tokens (px values only) --- */
 :root {
+    --header-font: 'Poppins', sans-serif;
+    --text-font: 'Montserrat', sans-serif;
     --bar-bg: #dddddd;
     --ink: #111111;
     --muted: #cfcfcf;
     --maxw: 1100px;
     --radius: 10px;
+}
+
+h1, h2, h3 {
+    font-family: var(--header-font);
+}
+
+p, span, li {
+    font-family: var(--text-font);
 }
 
 /* Optional dark theme */
@@ -33,9 +43,9 @@
 
 /* Single row using flex */
 .header-inner {
-    max-width: var(--maxw);
+    max-width: 100%;
     margin: 0 auto;
-    padding: 10px 16px;
+    padding: 20px 50px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -160,6 +170,261 @@
     text-decoration: none;
 }
 
+/* ------------------------------- BODY CONTENT ------------------------------- */
+
+
+/* Background lives on the box (no <img>) */
+.hero {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    /* desktop height; change if you prefer 95vh */
+    background-image:
+        linear-gradient(to top, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.25)),
+        url("/chamber/images/city.webp");
+    background-size: cover, cover;
+    background-position: center, center;
+    background-repeat: no-repeat, no-repeat;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Responsive H1 (PX + media queries) */
+.hero>h1 {
+    width: 100%;
+    /* no fixed width */
+    max-width: 1100px;
+    /* contains the line length on big screens */
+    margin: 0 0 16px 0;
+    color: #fff;
+    font-weight: 800;
+    font-size: 65px;
+    /* base desktop */
+    line-height: 1.15;
+    letter-spacing: -1.5px;
+    text-wrap: balance;
+    /* nicer wrapping (supported in modern browsers) */
+    text-align: center;
+}
+/* Button row */
+.hero-button {
+    display: flex;
+    padding-top: 30px;
+    gap: 12px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 44px;
+    padding: 0 18px;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1;
+    cursor: pointer;
+    transition: transform 120ms ease, box-shadow 120ms ease, background-color 120ms ease, border-color 120ms ease, color 120ms ease;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Primary (filled) */
+.btn--primary {
+    background: #3b82f6;
+    border-color: #3b82f6;
+    color: #ffffff;
+    font-family: var(--text-font);
+}
+
+.btn--primary:hover {
+    background: #2f6cd3;
+    border-color: #2f6cd3;
+    transform: translateY(-2px);
+}
+
+/* Ghost (outline, for dark hero) */
+.btn--ghost {
+    background: transparent;
+    color: #ffffff;
+    font-family: var(--text-font);
+    border-color: rgba(255, 255, 255, 0.85);
+}
+
+.btn--ghost:hover {
+    background: rgba(255, 255, 255, 0.10);
+    transform: translateY(-2px);
+}
+
+/* Focus states (keyboard) */
+.btn:focus-visible {
+    outline: 3px solid #ffffff;
+    outline-offset: 2px;
+}
+
+/* ===== Home (Events / Current Weather / Forecast) ===== */
+.home h2 {
+    margin: 0 0 12px 0;
+    font-size: 28px;
+}
+
+.home__widgets {
+    display: flex;
+    gap: 20px;
+    align-items: stretch;
+}
+
+/* Widget shell */
+.widget {
+    background: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+}
+
+.widget>h2 {
+    margin: 0;
+    padding: 10px 14px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #ffffff;
+    background: #2f2f2f;
+    /* dark title bar like wireframe */
+}
+
+/* Column sizing via flex-basis (Events wider) */
+.events {
+    flex: 1 1 560px;
+}
+
+/* ~half + */
+.weather-current {
+    flex: 0 1 300px;
+}
+
+.weather-forecast {
+    flex: 0 1 300px;
+}
+
+/* Events body */
+.events__list {
+    padding: 16px;
+    min-height: 160px;
+}
+
+/* Current weather body */
+.weather__content {
+    display: flex;
+    gap: 12px;
+    padding: 16px;
+}
+
+.weather__content img {
+    width: 84px;
+    height: 84px;
+    object-fit: contain;
+}
+
+.weather__content ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.weather__content li {
+    margin: 4px 0;
+}
+
+.weather__content li:first-child {
+    margin-bottom: 8px;
+}
+
+/* Forecast body */
+.weather-forecast ul {
+    list-style: none;
+    margin: 0;
+    padding: 12px 16px 16px 16px;
+}
+
+.weather-forecast li {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 10px;
+    border-radius: 8px;
+}
+
+.weather-forecast li:nth-child(odd) {
+    background: rgba(0, 0, 0, 0.04);
+}
+
+/* ===== Business Directory (card layout like example) ===== */
+.directory {
+    margin: 32px 0 0 0;
+}
+
+.directory__grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* 3-up cards on desktop: width ~ (1200 - gaps)/3 ≈ 386px */
+.card {
+    width: 380px;
+    /* adjust if your container differs */
+    background: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card img {
+    width: 100%;
+    height: 120px;
+    object-fit: contain;
+    border-radius: 10px;
+    background: #f1f3f5;
+}
+
+.card h3 {
+    margin: 12px 0 2px 0;
+    font-size: 18px;
+}
+
+.card .tagline {
+    margin: 0 0 8px 0;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.card p {
+    margin: 4px 0;
+    font-size: 15px;
+}
+
+.card a {
+    color: #3b82f6;
+    text-decoration: none;
+}
+
+.card a:hover {
+    text-decoration: underline;
+}
+
 footer {
     background-color: #222;
     color: #fff;
@@ -167,8 +432,44 @@ footer {
     padding: 20px 0;
 }
 
+@media (max-width: 1200px) {
+    .hero>h1 {
+        font-size: 48px;
+    }
+}
+
+
+/* ===== Responsive (Mobile) ===== */
+@media (max-width: 900px) {
+
+    /* let the three widgets wrap: events on top, then the two weather panels side-by-side if space allows */
+    .home__widgets {
+        flex-wrap: wrap;
+    }
+
+    .hero>h1 {
+        font-size: 40px;
+    }
+
+    .events {
+        flex: 1 1 100%;
+    }
+
+    .weather-current {
+        flex: 1 1 360px;
+    }
+
+    .weather-forecast {
+        flex: 1 1 360px;
+    }
+}
+
 /* ====== Mobile (≤ 767px) ====== */
 @media (max-width:767px) {
+    .header-inner {
+        padding: 20px 20px;
+    }
+
     .menu-toggle {
         display: inline-block;
     }
@@ -240,6 +541,51 @@ footer {
     html.nav-open .menu-close {
         display: inline-flex;
     }
+
+    .hero>h1 {
+        font-size: 32px;
+        letter-spacing: -1px;
+    }
+
+    .hero {
+        height: 420px;
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .hero h1 {
+        font-size: 26px;
+        max-width: 560px;
+    }
+
+    .hero-button {
+        gap: 10px;
+    }
+
+    .btn {
+        height: 42px;
+        padding: 0 16px;
+        font-size: 15px;
+    }
+
+    /* stack widgets like the phone mockup */
+    .home__widgets {
+        gap: 14px;
+    }
+
+    .weather__content img {
+        width: 64px;
+        height: 64px;
+    }
+
+    /* directory becomes single column cards */
+    .directory__grid {
+        gap: 14px;
+    }
+
+    .card {
+        width: 100%;
+    }
 }
 
 @media (max-width: 480px) {
@@ -255,6 +601,11 @@ footer {
     .brand {
         flex: 1 1 auto;
         min-width: 0;
+    }
+
+    .hero>h1 {
+        font-size: 26px;
+        letter-spacing: -0.5px;
     }
 }
 

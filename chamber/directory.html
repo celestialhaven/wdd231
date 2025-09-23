@@ -74,9 +74,93 @@
         </div>
     </header>
 
-    <!-- Add the main landmark to satisfy the skip link -->
-    <main id="main">
-        <!-- page content -->
+    <main>
+        <!-- ===== Hero Section ===== -->
+        <section class="hero">
+            <h1>Championing the European-Philippine Business Community</h1>
+        
+            <div class="hero-button">
+                <a href="/join.html" class="btn btn--primary" aria-label="Become a Member">
+                    Become a Member
+                </a>
+                <a href="/directory.html" class="btn btn--ghost" aria-label="Explore Business Directory">
+                    Explore Directory
+                </a>
+            </div>
+        </section>
+    
+        <!-- ===== Home Content ===== -->
+        <section class="home">
+            <h2>Home</h2>
+            <div class="home__widgets">
+                <!-- Events -->
+                <article class="widget events">
+                    <h2>Events</h2>
+                    <div class="events__list">
+                        <!-- Events injected dynamically -->
+                    </div>
+                </article>
+    
+                <!-- Current Weather -->
+                <article class="widget weather-current">
+                    <h2>Current Weather</h2>
+                    <div class="weather__content">
+                        <img src="images/weather-icon.png" alt="Weather Icon" />
+                        <ul>
+                            <li><strong>75°F</strong> Partly Cloudy</li>
+                            <li>High: 85°</li>
+                            <li>Low: 52°</li>
+                            <li>Humidity: 34%</li>
+                            <li>Sunrise: 7:30am</li>
+                            <li>Sunset: 9:59pm</li>
+                        </ul>
+                    </div>
+                </article>
+    
+                <!-- Weather Forecast -->
+                <article class="widget weather-forecast">
+                    <h2>Weather Forecast</h2>
+                    <ul>
+                        <li>Today: <strong>90°F</strong></li>
+                        <li>Wednesday: <strong>89°F</strong></li>
+                        <li>Thursday: <strong>68°F</strong></li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+    
+        <!-- ===== Business Directory Cards ===== -->
+        <section class="directory">
+            <div class="directory__grid">
+                <!-- Example cards – dynamically filled with members.json -->
+                <div class="card">
+                    <img src="images/sample1.png" alt="Business Logo" />
+                    <h3>Business Name</h3>
+                    <p class="tagline">Business Tag Line</p>
+                    <p><strong>Email:</strong> info@gmail.com</p>
+                    <p><strong>Phone:</strong> 800-555-1234</p>
+                    <p><strong>URL:</strong> <a href="https://mybusiness.com">mybusiness.com</a></p>
+                </div>
+    
+                <div class="card">
+                    <img src="images/sample2.png" alt="Business Logo" />
+                    <h3>Business Name</h3>
+                    <p class="tagline">Business Tag Line</p>
+                    <p><strong>Email:</strong> info@gmail.com</p>
+                    <p><strong>Phone:</strong> 800-555-1234</p>
+                    <p><strong>URL:</strong> <a href="https://mybusiness.com">mybusiness.com</a></p>
+                </div>
+    
+                <div class="card">
+                    <img src="images/sample3.png" alt="Business Logo" />
+                    <h3>Business Name</h3>
+                    <p class="tagline">Business Tag Line</p>
+                    <p><strong>Email:</strong> info@gmail.com</p>
+                    <p><strong>Phone:</strong> 800-555-1234</p>
+                    <p><strong>URL:</strong> <a href="https://mybusiness.com">mybusiness.com</a></p>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
