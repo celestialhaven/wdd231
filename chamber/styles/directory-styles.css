@@ -204,7 +204,7 @@ p, span, li {
     inset: 0;
     /* Use the path RELATIVE TO YOUR CSS FILE location (styles/directory-styles.css) */
     background:
-        linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .2)),
+        linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .8)),
         url("../images/city.jpg") center/cover no-repeat;
     z-index: 0;
     /* behind content */
