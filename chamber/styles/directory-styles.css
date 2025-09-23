@@ -177,19 +177,17 @@ p, span, li {
 .hero {
     display: flex;
     flex-direction: column;
-    position: relative;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     height: 90vh;
     /* desktop height; change if you prefer 95vh */
-    background-image:
-        url("/chamber/images/city.jpg");
-    background-size: cover, cover;
-    background-position: center, center;
-    background-repeat: no-repeat, no-repeat;
+    background-image: url("../images/city.jpg"); /* ← correct relative path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
 }
 
 /* Responsive H1 (PX + media queries) */
@@ -603,7 +601,7 @@ footer {
     }
 
     .hero>h1 {
-        font-size: 26px;
+        font-size: 35px;
         letter-spacing: -0.5px;
     }
 }
