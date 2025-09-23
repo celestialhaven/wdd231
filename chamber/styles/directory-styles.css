@@ -182,7 +182,7 @@ p, span, li {
     width: 100%;
     height: 90vh;
     /* desktop height; change if you prefer 95vh */
-    background-image: url("https: //celestialhaven.github.io/wdd231/chamber/images/city.jpg"); /* ← correct relative path */
+    background-image: url("/wdd231/chamber/images/city.jpg"); /* ← correct relative path */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
