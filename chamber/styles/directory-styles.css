@@ -183,7 +183,7 @@ p, span, li {
     /* desktop height; change if you prefer 95vh */
     background-image:
         linear-gradient(to top, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.25)),
-        url("/chamber/images/city.webp");
+        url("/chamber/images/city\(2\).jpg");
     background-size: cover, cover;
     background-position: center, center;
     background-repeat: no-repeat, no-repeat;
