@@ -4,7 +4,6 @@
     box-sizing: border-box;
 }
 
-/* --- Theme tokens (px values only) --- */
 :root {
     --header-font: 'Poppins', sans-serif;
     --text-font: 'Montserrat', sans-serif;
@@ -15,26 +14,25 @@
     --radius: 10px;
 }
 
-h1,
-h2,
-h3 {
-    font-family: var(--header-font);
-}
-
-p,
-span,
-li {
+body {
     font-family: var(--text-font);
 }
 
-/* Optional dark theme */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--header-font);
+}
+
 :root.dark {
     --bar-bg: #2a2a2a;
     --ink: #eeeeee;
     --muted: #333333;
 }
 
-/* Sticky header container */
 .site-header {
     position: sticky;
     top: 0;
@@ -44,7 +42,6 @@ li {
     border-bottom: 1px solid var(--muted);
 }
 
-/* Single row using flex */
 .header-inner {
     max-width: 100%;
     margin: 0 auto;
@@ -62,7 +59,6 @@ li {
     gap: 20px;
 }
 
-/* Brand (left) */
 .brand {
     display: inline-flex;
     align-items: center;
@@ -85,7 +81,6 @@ li {
     white-space: nowrap;
 }
 
-/* Actions (right) */
 .header-actions {
     display: inline-flex;
     align-items: center;
@@ -112,7 +107,6 @@ li {
     background: var(--ink);
 }
 
-/* ====== Base (desktop-first) ====== */
 .primary-nav {
     display: block;
     position: static;
@@ -134,7 +128,6 @@ li {
     display: none;
 }
 
-/* Links follow theme color */
 .nav-list a,
 .nav-list a:visited,
 .nav-list a:active,
@@ -148,7 +141,6 @@ li {
     text-decoration: underline;
 }
 
-/* Close button (desktop hidden by default) */
 .menu-close {
     display: none;
 }
@@ -159,8 +151,6 @@ li {
     font-size: 1.5rem;
     text-decoration: none;
 }
-
-/* ------------------------------- BODY CONTENT ------------------------------- */
 
 .hero {
     position: relative;
@@ -187,7 +177,6 @@ li {
     z-index: -1;
 }
 
-/* Overlay + image behind content */
 .hero::before {
     content: "";
     position: absolute;
@@ -198,7 +187,6 @@ li {
     z-index: 0;
 }
 
-/* Responsive H1 (PX + media queries) */
 .hero>h1 {
     width: 100%;
     max-width: 1100px;
@@ -212,7 +200,6 @@ li {
     text-align: center;
 }
 
-/* Button row */
 .hero-button {
     display: flex;
     padding-top: 30px;
@@ -222,7 +209,6 @@ li {
     justify-content: center;
 }
 
-/* Buttons */
 .btn {
     display: inline-flex;
     align-items: center;
@@ -238,13 +224,13 @@ li {
     cursor: pointer;
     transition: transform 120ms ease, box-shadow 120ms ease, background-color 120ms ease, border-color 120ms ease, color 120ms ease;
     box-shadow: 0 10px 25px rgba(0, 0, 0, .08);
+    font-family: var(--text-font);
 }
 
 .btn--primary {
     background: #3b82f6;
     border-color: #3b82f6;
     color: #fff;
-    font-family: var(--text-font);
 }
 
 .btn--primary:hover {
@@ -256,7 +242,6 @@ li {
 .btn--ghost {
     background: transparent;
     color: #fff;
-    font-family: var(--text-font);
     border-color: rgba(255, 255, 255, .85);
 }
 
@@ -270,19 +255,28 @@ li {
     outline-offset: 2px;
 }
 
-/* ===== Home (Events / Current Weather / Forecast) ===== */
+.home {
+    max-width: 1400px;
+    margin-inline: auto;
+    text-align: center;
+    padding-inline: 16px;
+    margin-top: 40px;
+}
+
 .home h2 {
+    text-align: center;
     margin: 0 0 12px 0;
     font-size: 28px;
 }
 
 .home__widgets {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
     gap: 20px;
-    align-items: stretch;
 }
 
-/* Widget shell */
 .widget {
     background: #ffffff;
     border-radius: 14px;
@@ -291,6 +285,7 @@ li {
     min-height: 220px;
     display: flex;
     flex-direction: column;
+    text-align: center;
 }
 
 .widget>h2 {
@@ -300,30 +295,13 @@ li {
     font-weight: 700;
     color: #ffffff;
     background: #2f2f2f;
+    text-align: center;
 }
 
-/* Column sizing via flex-basis (Events wider) */
-.events {
-    flex: 1 1 560px;
-}
-
-.weather-current {
-    flex: 0 1 300px;
-}
-
-.weather-forecast {
-    flex: 0 1 300px;
-}
-
-/* Events body */
-.events__list {
-    padding: 16px;
-    min-height: 160px;
-}
-
-/* Current weather body */
 .weather__content {
     display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 12px;
     padding: 16px;
 }
@@ -338,6 +316,7 @@ li {
     list-style: none;
     margin: 0;
     padding: 0;
+    text-align: center;
 }
 
 .weather__content li {
@@ -348,38 +327,47 @@ li {
     margin-bottom: 8px;
 }
 
-/* Forecast body */
 .weather-forecast ul {
     list-style: none;
     margin: 0;
     padding: 12px 16px 16px 16px;
+    text-align: center;
 }
 
 .weather-forecast li {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     padding: 8px 10px;
     border-radius: 8px;
+    gap: 10px;
 }
 
 .weather-forecast li:nth-child(odd) {
     background: rgba(0, 0, 0, 0.04);
 }
 
-/* ========================================================================== */
-/* =====================  DIRECTORY (TWO VIEWS)  ============================ */
-/* ========================================================================== */
-
-/* ===== Center the whole Directory block ===== */
-.directory {
-    max-width: var(--maxw);
-    /* 1100px from your tokens */
-    margin-inline: auto;
-    /* centers the section */
-    padding-inline: 16px;
-    /* comfy side padding */
+.events {
+    flex: 1 1 560px;
 }
 
+.weather-current {
+    flex: 0 1 300px;
+}
+
+.weather-forecast {
+    flex: 0 1 300px;
+}
+
+.events__list {
+    padding: 16px;
+    min-height: 160px;
+}
+
+.directory {
+    max-width: var(--maxw);
+    margin-inline: auto;
+    padding-inline: 16px;
+}
 
 .directory__title {
     margin: 16px 0 10px;
@@ -388,7 +376,6 @@ li {
     text-align: center;
 }
 
-/* Toolbar (two buttons: Grid / Table) */
 .directory__toolbar {
     display: flex;
     justify-content: center;
@@ -397,7 +384,6 @@ li {
     border-radius: 10px;
 }
 
-/* Keep the content container centered */
 .directory__content {
     display: block;
     max-width: var(--maxw);
@@ -412,7 +398,7 @@ li {
     padding: 6px 10px;
     border-radius: 8px;
     cursor: pointer;
-    font: 600 14px/1 var(--text-font, system-ui);
+    font: 600 14px/1 var(--text-font), system-ui;
     box-shadow: 0 2px 6px rgba(0, 0, 0, .05);
 }
 
@@ -422,7 +408,6 @@ li {
     border-color: #3b82f6;
 }
 
-/* ---- GRID CARDS ---- */
 .dir-grid {
     display: grid;
     gap: 18px;
@@ -442,7 +427,6 @@ li {
     }
 }
 
-/* Card */
 .dir-card {
     background: #fff;
     border-radius: 14px;
@@ -486,7 +470,6 @@ li {
     text-decoration: underline;
 }
 
-/* ---- ZEBRA TABLE ---- */
 .dir-table {
     width: min(100%, var(--maxw));
     margin-inline: auto;
@@ -517,7 +500,6 @@ li {
     background: #fafafa;
 }
 
-/* zebra striping */
 .dir-table a {
     color: #3b82f6;
     text-decoration: none;
@@ -527,12 +509,9 @@ li {
     text-decoration: underline;
 }
 
-/* Make long URLs wrap nicely */
 .dir-table td:nth-child(5) {
     word-break: break-word;
 }
-
-/* ========================================================================== */
 
 footer {
     background-color: #222;
@@ -540,8 +519,6 @@ footer {
     text-align: center;
     padding: 20px 0;
 }
-
-/* ------------------------------ MEDIA QUERIES ------------------------------ */
 
 @media (max-width: 1200px) {
     .hero>h1 {
@@ -570,13 +547,11 @@ footer {
         flex: 1 1 360px;
     }
 
-    /* grid becomes 2-up (already handled above too) */
     .dir-grid {
         grid-template-columns: repeat(2, minmax(220px, 1fr));
     }
 }
 
-/* ====== Mobile (≤ 767px) ====== */
 @media (max-width: 767px) {
     .header-inner {
         padding: 20px 20px;
@@ -586,7 +561,6 @@ footer {
         display: inline-block;
     }
 
-    /* Fullscreen overlay menu */
     .primary-nav {
         position: fixed;
         top: 0;
@@ -677,6 +651,10 @@ footer {
         width: 64px;
         height: 64px;
     }
+
+    .weather__content {
+        flex-direction: column;
+    }
 }
 
 @media (max-width: 480px) {
@@ -698,13 +676,11 @@ footer {
         letter-spacing: -0.5px;
     }
 
-    /* grid becomes 1-up (already handled above too) */
     .dir-grid {
         grid-template-columns: 1fr;
     }
 }
 
-/* Skip link */
 .skip-link {
     position: absolute;
     left: -9999px;
