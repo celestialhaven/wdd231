@@ -194,47 +194,60 @@
                 <!-- Modals -->
                 <div class="modal-backdrop" data-backdrop hidden></div>
     
-                <dialog id="modal-np" class="modal" aria-labelledby="modal-np-title" aria-modal="true">
+                <dialog id="modal-np" class="modal" role="dialog" aria-labelledby="modal-np-title" aria-describedby="modal-np-desc"
+                    aria-modal="true">
                     <h3 id="modal-np-title">NP Membership (₱0)</h3>
-                    <ul>
-                        <li>Access to select Chamber events</li>
-                        <li>Newsletter & community updates</li>
-                        <li>Volunteer & partnership opportunities</li>
-                    </ul>
-                    <button class="btn close" data-close>Close</button>
+                    <div id="modal-np-desc">
+                        <ul>
+                            <li>Access to select Chamber events</li>
+                            <li>Newsletter & community updates</li>
+                            <li>Volunteer & partnership opportunities</li>
+                        </ul>
+                    </div>
+                    <button class="btn close" type="button" data-close>Close</button>
                 </dialog>
-    
-                <dialog id="modal-bronze" class="modal" aria-labelledby="modal-bronze-title" aria-modal="true">
+                
+                <dialog id="modal-bronze" class="modal" role="dialog" aria-labelledby="modal-bronze-title"
+                    aria-describedby="modal-bronze-desc" aria-modal="true">
                     <h3 id="modal-bronze-title">Bronze Membership</h3>
-                    <ul>
-                        <li>Directory listing & basic profile</li>
-                        <li>Member-only event discounts</li>
-                        <li>Quarterly training webinars</li>
-                    </ul>
-                    <button class="btn close" data-close>Close</button>
+                    <div id="modal-bronze-desc">
+                        <ul>
+                            <li>Directory listing & basic profile</li>
+                            <li>Member-only event discounts</li>
+                            <li>Quarterly training webinars</li>
+                        </ul>
+                    </div>
+                    <button class="btn close" type="button" data-close>Close</button>
                 </dialog>
-    
-                <dialog id="modal-silver" class="modal" aria-labelledby="modal-silver-title" aria-modal="true">
+                
+                <dialog id="modal-silver" class="modal" role="dialog" aria-labelledby="modal-silver-title"
+                    aria-describedby="modal-silver-desc" aria-modal="true">
                     <h3 id="modal-silver-title">Silver Membership</h3>
-                    <ul>
-                        <li>Everything in Bronze</li>
-                        <li>Spotlight ad on home page (rotating)</li>
-                        <li>Priority booth pricing at events</li>
-                        <li>Co-marketing opportunities</li>
-                    </ul>
-                    <button class="btn close" data-close>Close</button>
+                    <div id="modal-silver-desc">
+                        <ul>
+                            <li>Everything in Bronze</li>
+                            <li>Spotlight ad on home page (rotating)</li>
+                            <li>Priority booth pricing at events</li>
+                            <li>Co-marketing opportunities</li>
+                        </ul>
+                    </div>
+                    <button class="btn close" type="button" data-close>Close</button>
                 </dialog>
-    
-                <dialog id="modal-gold" class="modal" aria-labelledby="modal-gold-title" aria-modal="true">
+                
+                <dialog id="modal-gold" class="modal" role="dialog" aria-labelledby="modal-gold-title"
+                    aria-describedby="modal-gold-desc" aria-modal="true">
                     <h3 id="modal-gold-title">Gold Membership</h3>
-                    <ul>
-                        <li>Everything in Silver</li>
-                        <li>Featured partner placements</li>
-                        <li>Custom training for your team</li>
-                        <li>VIP access to special events</li>
-                    </ul>
-                    <button class="btn close" data-close>Close</button>
+                    <div id="modal-gold-desc">
+                        <ul>
+                            <li>Everything in Silver</li>
+                            <li>Featured partner placements</li>
+                            <li>Custom training for your team</li>
+                            <li>VIP access to special events</li>
+                        </ul>
+                    </div>
+                    <button class="btn close" type="button" data-close>Close</button>
                 </dialog>
+
             </aside>
         </section>
     </main>
