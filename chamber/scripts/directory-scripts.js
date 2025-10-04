@@ -1,14 +1,14 @@
-// ===== Mobile menu (overlay) =====
-const root     = document.documentElement;           // <html>
-const nav      = document.getElementById('primary-menu');  // the overlay nav
-const openBtn  = document.querySelector('.menu-toggle');   // hamburger
-const closeBtn = document.querySelector('.menu-close');    // × button
+
+const root     = document.documentElement;       
+const nav      = document.getElementById('primary-menu'); 
+const openBtn  = document.querySelector('.menu-toggle');  
+const closeBtn = document.querySelector('.menu-close');  
 
 const isDesktop = () => window.matchMedia('(min-width:768px)').matches;
 
 function openMenu() {
-  nav.classList.add('open');         // expands overlay (CSS)
-  root.classList.add('nav-open');    // swaps hamburger -> × (CSS)
+  nav.classList.add('open');       
+  root.classList.add('nav-open');   
   openBtn?.setAttribute('aria-expanded', 'true');
   openBtn?.setAttribute('aria-label', 'Close menu');
 }
@@ -23,19 +23,15 @@ function closeMenu() {
 openBtn?.addEventListener('click', openMenu);
 closeBtn?.addEventListener('click', closeMenu);
 
-// Close when a menu link is tapped
 document.querySelectorAll('#primary-menu a').forEach(a =>
   a.addEventListener('click', closeMenu)
 );
 
-// Close if resized to desktop
 window.addEventListener('resize', () => { if (isDesktop()) closeMenu(); });
 
-// Optional: ESC closes overlay
 document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
 
 
-// ===== Dark mode toggle (your original code, kept) =====
 const themeBtn = document.querySelector('.theme-toggle');
 themeBtn?.addEventListener('click', () => {
   const active = root.classList.toggle('dark');
@@ -43,7 +39,6 @@ themeBtn?.addEventListener('click', () => {
   try { localStorage.setItem('theme', active ? 'dark' : 'light'); } catch {}
 });
 
-// Load saved theme
 try {
   const saved = localStorage.getItem('theme');
   if (saved === 'dark') {
@@ -53,14 +48,12 @@ try {
 } catch {}
 
 document.addEventListener("DOMContentLoaded", function () {
-  // current year
   const currentYear = new Date().getFullYear();
   const yearElement = document.getElementById("currentyear");
   if (yearElement) {
     yearElement.textContent = ` ${currentYear}`;
   }
 
-  // last modified date of the document
   const lastModified = document.lastModified;
   const modifiedElement = document.getElementById("lastModified");
   if (modifiedElement) {
@@ -76,7 +69,7 @@ let members = [];
 
 (async function init(){
   await loadMembers();
-  renderGrid();                 // default view
+  renderGrid();            
   btnGrid.addEventListener('click', renderGrid);
   btnTable.addEventListener('click', renderTable);
 })();
@@ -168,14 +161,13 @@ const spotlightEl = document.querySelector('.spotlights__list');
 
 (async function init(){
   await loadMembers();
-  renderGrid();                 // default view
-  renderSpotlights();           // ← add this line
+  renderGrid();                 
+  renderSpotlights();        
   btnGrid.addEventListener('click', renderGrid);
   btnTable.addEventListener('click', renderTable);
 })();
 
 function eligibleMembers() {
-  // membershipLevel: 3 = Gold, 2 = Silver (your existing mapping)
   return members.filter(m => [2, 3].includes(Number(m.membershipLevel)));
 }
 
@@ -196,11 +188,9 @@ function renderSpotlights() {
     return;
   }
 
-  // random 2 or 3 each render
   const count = Math.min(pool.length, Math.random() < 0.5 ? 2 : 3);
   const picks = shuffleInPlace([...pool]).slice(0, count);
 
-  // Reuse your existing card renderer for consistency
   const frag = document.createDocumentFragment();
   picks.forEach(m => frag.appendChild(cardEl(m)));
 

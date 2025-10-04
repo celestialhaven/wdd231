@@ -304,10 +304,8 @@ h6 {
    ───────────────────────────────────────────────────────── */
 
 .weather-card {
-    /* size similar to previous two cards combined */
     flex: 0 1 360px;
     margin: 0;
-    /* body of the widget stays from .widget; add inner spacing */
     padding: 0 0 12px 0;
 }
 
@@ -586,7 +584,6 @@ footer {
         flex: 1 1 100%;
     }
 
-    /* NEW: weather card sizing at tablet */
     .weather-card {
         flex: 1 1 360px;
     }
@@ -691,7 +688,6 @@ footer {
         gap: 14px;
     }
 
-    /* NEW: stack forecast on small screens */
     .forecast-list {
         grid-template-columns: 1fr;
     }
