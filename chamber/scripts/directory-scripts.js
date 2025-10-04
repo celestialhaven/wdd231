@@ -162,3 +162,49 @@ function shortUrl(url){
 function press(active){
   [btnGrid, btnTable].forEach(b => b.setAttribute('aria-pressed', String(b === active)));
 }
+
+
+const spotlightEl = document.querySelector('.spotlights__list');
+
+(async function init(){
+  await loadMembers();
+  renderGrid();                 // default view
+  renderSpotlights();           // ← add this line
+  btnGrid.addEventListener('click', renderGrid);
+  btnTable.addEventListener('click', renderTable);
+})();
+
+function eligibleMembers() {
+  // membershipLevel: 3 = Gold, 2 = Silver (your existing mapping)
+  return members.filter(m => [2, 3].includes(Number(m.membershipLevel)));
+}
+
+function shuffleInPlace(arr) {
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
+function renderSpotlights() {
+  if (!spotlightEl) return;
+
+  const pool = eligibleMembers();
+  if (pool.length === 0) {
+    spotlightEl.innerHTML = `<p style="padding:12px;">No spotlight members yet.</p>`;
+    return;
+  }
+
+  // random 2 or 3 each render
+  const count = Math.min(pool.length, Math.random() < 0.5 ? 2 : 3);
+  const picks = shuffleInPlace([...pool]).slice(0, count);
+
+  // Reuse your existing card renderer for consistency
+  const frag = document.createDocumentFragment();
+  picks.forEach(m => frag.appendChild(cardEl(m)));
+
+  spotlightEl.innerHTML = '';
+  spotlightEl.appendChild(frag);
+}
+

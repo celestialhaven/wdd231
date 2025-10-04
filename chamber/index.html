@@ -2,33 +2,34 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cagayan De Oro Chamber of Commerce</title>
 
-    <link rel="icon" href="images/favicon.ico" sizes="any">
+    <link rel="icon" href="images/favicon.ico" sizes="any" />
 
     <meta name="description"
-        content="Connect with the Cagayan de Oro Chamber of Commerce – fostering business growth, partnerships, and opportunities for entrepreneurs and industries across Northern Mindanao.">
-    <meta name="author" content="Jones Mabala">
+        content="Connect with the Cagayan de Oro Chamber of Commerce – fostering business growth, partnerships, and opportunities for entrepreneurs and industries across Northern Mindanao." />
+    <meta name="author" content="Jones Mabala" />
 
-    <meta property="og:title" content="Cagayan De Oro Chamber of Commerce">
+    <meta property="og:title" content="Cagayan De Oro Chamber of Commerce" />
     <meta property="og:description"
-        content="Connect with the Cagayan de Oro Chamber of Commerce – fostering business growth, partnerships, and opportunities for entrepreneurs and industries across Northern Mindanao.">
-    <meta property="og:locale" content="en_PH">
-    <meta property="og:image" content="https://celestialhaven.github.io/wdd231/chamber/images/oro-chamber.jpg">
-    <meta property="og:url" content="https://celestialhaven.github.io/wdd231/chamber/index.html">
-    <meta property="og:type" content="website">
+        content="Connect with the Cagayan de Oro Chamber of Commerce – fostering business growth, partnerships, and opportunities for entrepreneurs and industries across Northern Mindanao." />
+    <meta property="og:locale" content="en_PH" />
+    <meta property="og:image" content="https://celestialhaven.github.io/wdd231/chamber/images/oro-chamber.jpg" />
+    <meta property="og:url" content="https://celestialhaven.github.io/wdd231/chamber/index.html" />
+    <meta property="og:type" content="website" />
 
-    <link rel="canonical" href="https://celestialhaven.github.io/wdd231/chamber/index.html">
+    <link rel="canonical" href="https://celestialhaven.github.io/wdd231/chamber/index.html" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&family=Poppins:wght@400;600&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="./styles/directory-styles.css">
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="./styles/directory-styles.css" />
     <script src="./scripts/directory-scripts.js" defer></script>
+    <script src="./scripts/weather.js" defer></script>
 </head>
 
 <body>
@@ -37,7 +38,7 @@
     <header class="site-header">
         <div class="header-inner">
             <a href="./index.html" class="brand" aria-label="Cagayan De Oro Chamber of Commerce – Home">
-                <img class="brand-logo" src="./images/coc.jpg" alt="Cagayan De Oro Chamber of Commerce logo">
+                <img class="brand-logo" src="./images/coc.jpg" alt="Cagayan De Oro Chamber of Commerce logo" />
                 <span class="brand-name">Cagayan De Oro Chamber of Commerce</span>
             </a>
 
@@ -68,7 +69,7 @@
 
     <main id="main">
         <section class="hero">
-            <img src="./images/city-1.webp" alt="Cagayan de Oro city view" class="hero-bg">
+            <img src="./images/city-1.webp" alt="Cagayan de Oro city view" class="hero-bg" />
             <h1>Championing the European-Philippine Business Community</h1>
             <div class="hero-button">
                 <a href="./join.html" class="btn btn--primary">Become a Member</a>
@@ -79,32 +80,27 @@
         <section class="home">
             <h2>Home</h2>
             <div class="home__widgets">
-                <article class="widget events">
-                    <h2>Events</h2>
-                    <div class="events__list"></div>
+                <article class="widget spotlights">
+                    <h2>Member Spotlights</h2>
+                    <div class="spotlights__list" aria-live="polite"></div>
                 </article>
 
-                <article class="widget weather-current">
+                <!-- ✅ NEW WEATHER SECTION (replace both old weather widgets) -->
+                <article class="widget weather-card" id="weather">
                     <h2>Current Weather</h2>
-                    <div class="weather__content">
-                        <img src="images/weather-icon.png" alt="Weather Icon">
-                        <ul>
-                            <li><strong>75°F</strong> Partly Cloudy</li>
-                            <li>High: 85°</li>
-                            <li>Low: 52°</li>
-                            <li>Humidity: 34%</li>
-                            <li>Sunrise: 7:30am</li>
-                            <li>Sunset: 9:59pm</li>
-                        </ul>
+                    <div class="weather-current-row">
+                        <div class="left">
+                            <div id="current-temp" class="weather-now-temp" aria-live="polite">--°C</div>
+                            <div id="current-desc" class="weather-now-desc">Loading…</div>
+                        </div>
+                        <div class="right">
+                            <img id="current-icon" alt="" width="64" height="64" />
+                        </div>
                     </div>
-                </article>
 
-                <article class="widget weather-forecast">
-                    <h2>Weather Forecast</h2>
-                    <ul>
-                        <li>Today: <strong>90°F</strong></li>
-                        <li>Wednesday: <strong>89°F</strong></li>
-                        <li>Thursday: <strong>68°F</strong></li>
+                    <h3>3-Day Forecast</h3>
+                    <ul id="forecast" class="forecast-list" aria-live="polite">
+                        <!-- Weather data will be injected by JS -->
                     </ul>
                 </article>
             </div>
