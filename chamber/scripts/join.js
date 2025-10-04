@@ -101,13 +101,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if (opener && typeof opener.focus === 'function') opener.focus();
   }
 
-  // open buttons
-  openers.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const idLike = btn.dataset.modalOpen || btn.dataset.open; // support both
-      openModal(idLike, btn);
+    // open buttons
+    openers.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        e.preventDefault();          // <-- make sure nothing else fires
+        const idLike = btn.dataset.modalOpen || btn.dataset.open; // support both
+        openModal(idLike, btn);
     });
-  });
+    });
 
   // close buttons (new data-modal-close)
   document.addEventListener('click', e => {
