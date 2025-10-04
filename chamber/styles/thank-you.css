@@ -1,0 +1,60 @@
+/* THANK YOU PAGE STYLES */
+.wrap {
+    width: 100%;
+    align-content: center;
+    height: auto;
+    margin: 2rem auto;
+    padding: 80px 420px;
+}
+
+.thanks {
+    background: #f6f8ff;
+    border: 1px solid #e7eaff;
+    padding: 1.5rem;
+    border-radius: .9rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: .75rem;
+}
+
+.thank-you-btn {
+    display: inline-block;
+    padding: .8rem 1.1rem;
+    border: 0;
+    border-radius: .65rem;
+    background: #316aff;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+
+@media (max-width: 1366px) {
+
+    .wrap {
+        padding: 80px 10px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+.kv {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: .6rem;
+    padding: 10px 10px;
+}
+
+.kv b {
+    display: block;
+    font-size: .85rem;
+    color: #555;
+    margin-bottom: 10px;
+}

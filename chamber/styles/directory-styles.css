@@ -442,7 +442,7 @@ h6 {
 
 /* Layout */
 .join-layout {
-    padding: 2rem 1rem;
+    padding: 80px 120px;
 }
 
 .page-title {
@@ -516,6 +516,7 @@ h6 {
 }
 
 .btn.close {
+    margin-top: 20px;
     background: #101012;
 }
 
@@ -544,6 +545,7 @@ h6 {
     color: #316aff;
     text-decoration: underline;
     font-weight: 600;
+    font-size: 14px;
     cursor: pointer;
     padding: 0;
 }
@@ -577,6 +579,22 @@ h6 {
     animation-delay: .24s;
 }
 
+dialog.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    /* optional styling */
+    max-width: 34rem;
+    width: 90%;
+    border: 0;
+    border-radius: .8rem;
+    padding: 1.25rem;
+    background: #fff;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .25);
+}
+
 /* Modals */
 .modal::backdrop {
     background: rgba(0, 0, 0, .55);
@@ -591,6 +609,7 @@ h6 {
 
 .modal h3 {
     margin-top: 0;
+    margin-bottom: 10px;
 }
 
 .modal ul {
@@ -731,6 +750,10 @@ footer {
 @media (max-width: 1200px) {
     .hero>h1 {
         font-size: 48px;
+    }
+
+    .join-layout {
+        padding: 40px 20px;
     }
 }
 

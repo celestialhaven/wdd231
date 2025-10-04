@@ -198,3 +198,26 @@ function renderSpotlights() {
   spotlightEl.appendChild(frag);
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+  // Pick a unique element that only exists on the directory page
+  const directoryRoot = document.querySelector('[data-directory-root]') 
+                      || document.getElementById('directory-root');
+  if (!directoryRoot) return; // ← not on directory page, bail out safely
+
+  // Now query stuff you need
+  const toggleBtns = document.querySelectorAll('[data-view]');
+  const cardsWrap  = document.getElementById('cards');
+  // Always guard before using
+  toggleBtns.forEach(btn => {
+    btn?.addEventListener('click', () => {
+      const view = btn.getAttribute('data-view');
+      if (cardsWrap) {
+        cardsWrap.setAttribute('data-view', view); // safe now
+      }
+    });
+  });
+
+  // …rest of your directory code, always null-check before using
+});
+
+
