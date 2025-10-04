@@ -27,10 +27,217 @@
         rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
     <link rel="stylesheet" href="./styles/directory-styles.css"/>
+    <link rel="stylesheet" href="./styles/thankyou.css"/>
     <script src="./scripts/directory-scripts.js" defer></script>
     <script src="./scripts/weather.js" defer></script>
+    <script src="./scripts/join.js" defer></script>
 </head>
 <body>
+    <a class="skip-link" href="#main">Skip to content</a>
     
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="./index.html" class="brand" aria-label="Cagayan De Oro Chamber of Commerce – Home">
+                <img class="brand-logo" src="./images/coc.jpg" alt="Cagayan De Oro Chamber of Commerce logo" />
+                <span class="brand-name">Cagayan De Oro Chamber of Commerce</span>
+            </a>
+    
+            <div class="header-right">
+                <nav id="primary-menu" class="primary-nav" aria-label="Primary">
+                    <ul class="nav-list">
+                        <li><a href="./index.html" aria-current="page">Home</a></li>
+                        <li><a href="./directory.html">Directory</a></li>
+                        <li><a href="./join.html">Join</a></li>
+                        <li><a href="./discover.html">Discover</a></li>
+                    </ul>
+                </nav>
+    
+                <div class="header-actions">
+                    <button class="icon-btn theme-toggle" type="button" aria-label="Toggle dark mode"
+                        aria-pressed="false">◑</button>
+                    <button class="icon-btn menu-toggle" type="button" aria-controls="primary-menu" aria-expanded="false"
+                        aria-label="Open menu">
+                        <span class="bar" aria-hidden="true"></span>
+                        <span class="bar" aria-hidden="true"></span>
+                        <span class="bar" aria-hidden="true"></span>
+                    </button>
+                    <button class="icon-btn menu-close" type="button" aria-label="Close menu">×</button>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main id="main" class="join-layout">
+        <h1 class="page-title">Join the Chamber</h1>
+    
+        <section class="join-grid" aria-label="Membership application">
+            <!-- FORM (left on desktop, above on mobile) -->
+            <form id="join-form" class="join-form" method="get" action="thankyou.html" novalidate>
+                <fieldset>
+                    <legend>Applicant Information</legend>
+    
+                    <label title="First name">
+                        First Name
+                        <input type="text" id="fname" name="firstName" required autocomplete="given-name" inputmode="text"
+                            title="First name" />
+                    </label>
+    
+                    <label title="Last name">
+                        Last Name
+                        <input type="text" id="lname" name="lastName" required autocomplete="family-name" inputmode="text"
+                            title="Last name" />
+                    </label>
+    
+                    <label title="Organizational title">
+                        Organizational Title
+                        <input type="text" id="orgTitle" name="orgTitle" autocomplete="organization-title" inputmode="text"
+                            pattern="^[A-Za-z\- ]{7,}$" title="Use letters, hyphens, and spaces only (minimum 7 characters)"
+                            placeholder="e.g., Communications Lead" />
+                    </label>
+    
+                    <label title="Email address">
+                        Email
+                        <input type="email" id="email" name="email" required autocomplete="email"
+                            placeholder="name@example.com" title="Valid email address, e.g. name@example.com" />
+                    </label>
+    
+                    <label title="Mobile phone number">
+                        Mobile Number
+                        <input type="tel" id="mobile" name="mobile" required autocomplete="tel" inputmode="tel"
+                            title="Mobile phone number" placeholder="+63 912 345 6789" />
+                    </label>
+    
+                    <label title="Business or organization name">
+                        Business / Organization
+                        <input type="text" id="organization" name="organization" required autocomplete="organization"
+                            inputmode="text" title="Business or organization name"
+                            placeholder="e.g., Oro Tech Innovations" />
+                    </label>
+                </fieldset>
+    
+                <fieldset>
+                    <legend>Membership Level</legend>
+                    <p class="hint">Choose one:</p>
+    
+                    <label class="radio">
+                        <input type="radio" name="membership" value="NP" required />
+                        <span>NP Membership</span> <small>(non-profit • ₱0)</small>
+                    </label>
+    
+                    <label class="radio">
+                        <input type="radio" name="membership" value="Bronze" />
+                        <span>Bronze</span>
+                    </label>
+    
+                    <label class="radio">
+                        <input type="radio" name="membership" value="Silver" />
+                        <span>Silver</span>
+                    </label>
+    
+                    <label class="radio">
+                        <input type="radio" name="membership" value="Gold" />
+                        <span>Gold</span>
+                    </label>
+                </fieldset>
+    
+                <label title="Business or organization description">
+                    Organization Description
+                    <textarea id="orgDescription" name="orgDescription" rows="6"
+                        title="Business or organization description"
+                        placeholder="Tell us about your organization, services, and goals…"></textarea>
+                </label>
+    
+                <!-- Hidden timestamp (filled on load) -->
+                <input type="hidden" id="timestamp" name="timestamp" />
+    
+                <input type="submit" class="btn" value="Submit Application" />
+            </form>
+    
+            <!-- CARDS + MODALS (right on desktop, below on mobile) -->
+            <aside class="levels" aria-label="Membership levels and benefits">
+                <h2 class="sr-only">Membership Levels</h2>
+    
+                <div class="level-cards">
+                    <!-- NP -->
+                    <article class="level-card" tabindex="0">
+                        <h3>NP Membership</h3>
+                        <p>No fee • For non-profits</p>
+                        <button class="link-btn" data-open="modal-np" aria-haspopup="dialog"
+                            aria-controls="modal-np">Benefits & Details</button>
+                    </article>
+    
+                    <!-- Bronze -->
+                    <article class="level-card" tabindex="0">
+                        <h3>Bronze</h3>
+                        <p>Essential benefits to get started</p>
+                        <button class="link-btn" data-open="modal-bronze" aria-haspopup="dialog"
+                            aria-controls="modal-bronze">Benefits & Details</button>
+                    </article>
+    
+                    <!-- Silver -->
+                    <article class="level-card" tabindex="0">
+                        <h3>Silver</h3>
+                        <p>More visibility & training</p>
+                        <button class="link-btn" data-open="modal-silver" aria-haspopup="dialog"
+                            aria-controls="modal-silver">Benefits & Details</button>
+                    </article>
+    
+                    <!-- Gold -->
+                    <article class="level-card" tabindex="0">
+                        <h3>Gold</h3>
+                        <p>Maximum exposure & perks</p>
+                        <button class="link-btn" data-open="modal-gold" aria-haspopup="dialog"
+                            aria-controls="modal-gold">Benefits & Details</button>
+                    </article>
+                </div>
+    
+                <!-- Modals -->
+                <div class="modal-backdrop" data-backdrop hidden></div>
+    
+                <dialog id="modal-np" class="modal" aria-labelledby="modal-np-title" aria-modal="true">
+                    <h3 id="modal-np-title">NP Membership (₱0)</h3>
+                    <ul>
+                        <li>Access to select Chamber events</li>
+                        <li>Newsletter & community updates</li>
+                        <li>Volunteer & partnership opportunities</li>
+                    </ul>
+                    <button class="btn close" data-close>Close</button>
+                </dialog>
+    
+                <dialog id="modal-bronze" class="modal" aria-labelledby="modal-bronze-title" aria-modal="true">
+                    <h3 id="modal-bronze-title">Bronze Membership</h3>
+                    <ul>
+                        <li>Directory listing & basic profile</li>
+                        <li>Member-only event discounts</li>
+                        <li>Quarterly training webinars</li>
+                    </ul>
+                    <button class="btn close" data-close>Close</button>
+                </dialog>
+    
+                <dialog id="modal-silver" class="modal" aria-labelledby="modal-silver-title" aria-modal="true">
+                    <h3 id="modal-silver-title">Silver Membership</h3>
+                    <ul>
+                        <li>Everything in Bronze</li>
+                        <li>Spotlight ad on home page (rotating)</li>
+                        <li>Priority booth pricing at events</li>
+                        <li>Co-marketing opportunities</li>
+                    </ul>
+                    <button class="btn close" data-close>Close</button>
+                </dialog>
+    
+                <dialog id="modal-gold" class="modal" aria-labelledby="modal-gold-title" aria-modal="true">
+                    <h3 id="modal-gold-title">Gold Membership</h3>
+                    <ul>
+                        <li>Everything in Silver</li>
+                        <li>Featured partner placements</li>
+                        <li>Custom training for your team</li>
+                        <li>VIP access to special events</li>
+                    </ul>
+                    <button class="btn close" data-close>Close</button>
+                </dialog>
+            </aside>
+        </section>
+    </main>
+
 </body>
 </html>

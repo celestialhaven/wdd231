@@ -379,12 +379,6 @@ h6 {
     color: #334155;
 }
 
-/* ─────────────────────────────────────────────────────────
-   REMOVED (old weather)
-   - .weather__content
-   - .weather-forecast
-   - .weather-current
-   ───────────────────────────────────────────────────────── */
 
 /* KEEP events sizing as is */
 .events {
@@ -443,6 +437,180 @@ h6 {
     grid-template-columns: repeat(3, minmax(260px, 1fr));
     justify-content: center;
 }
+
+/* JOIN  */
+
+/* Layout */
+.join-layout {
+    padding: 2rem 1rem;
+}
+
+.page-title {
+    font-family: Poppins, system-ui, sans-serif;
+    margin-bottom: 1rem;
+}
+
+.join-grid {
+    display: grid;
+    gap: 2rem;
+}
+
+/* form left, cards right on ≥ 900px */
+@media (min-width: 900px) {
+    .join-grid {
+        grid-template-columns: 2fr 1fr;
+        align-items: start;
+    }
+}
+
+.join-form label {
+    display: block;
+    margin-block: .75rem;
+}
+
+.join-form input[type="text"],
+.join-form input[type="email"],
+.join-form input[type="tel"],
+.join-form textarea {
+    width: 100%;
+    padding: .75rem .9rem;
+    border: 1px solid #ddd;
+    border-radius: .5rem;
+    font: 400 1rem/1.4 Montserrat, system-ui, sans-serif;
+}
+
+.join-form fieldset {
+    border: 1px solid #e7e7e7;
+    border-radius: .75rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.join-form legend {
+    font-weight: 600;
+    padding: 0 .5rem;
+}
+
+.radio {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    margin-bottom: .5rem;
+}
+
+.hint {
+    margin-top: 0;
+    color: #666;
+    font-size: .9rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: .8rem 1.1rem;
+    border: 0;
+    border-radius: .65rem;
+    background: #316aff;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn.close {
+    background: #101012;
+}
+
+/* Cards */
+.level-cards {
+    display: grid;
+    gap: 1rem;
+}
+
+.level-card {
+    border: 1px solid #eee;
+    border-radius: .9rem;
+    padding: 1rem;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .06);
+    animation: floatIn .9s ease both;
+}
+
+.level-card:focus-within {
+    outline: 2px solid #316aff;
+    outline-offset: 3px;
+}
+
+.link-btn {
+    background: none;
+    border: 0;
+    color: #316aff;
+    text-decoration: underline;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0;
+}
+
+/* Initial load animation for attention (not hover-based) */
+@keyframes floatIn {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.level-card:nth-child(1) {
+    animation-delay: .0s;
+}
+
+.level-card:nth-child(2) {
+    animation-delay: .08s;
+}
+
+.level-card:nth-child(3) {
+    animation-delay: .16s;
+}
+
+.level-card:nth-child(4) {
+    animation-delay: .24s;
+}
+
+/* Modals */
+.modal::backdrop {
+    background: rgba(0, 0, 0, .55);
+}
+
+.modal {
+    border: 0;
+    border-radius: .8rem;
+    padding: 1.25rem;
+    max-width: 34rem;
+}
+
+.modal h3 {
+    margin-top: 0;
+}
+
+.modal ul {
+    padding-left: 1.25rem;
+}
+
+.sr-only {
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+
+
 
 @media (max-width: 980px) {
     .dir-grid {

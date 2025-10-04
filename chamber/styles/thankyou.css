@@ -1,0 +1,38 @@
+/* THANK YOU PAGE STYLES */
+.wrap {
+    max-width: 960px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.thanks {
+    background: #f6f8ff;
+    border: 1px solid #e7eaff;
+    padding: 1.5rem;
+    border-radius: .9rem;
+}
+
+.grid {
+    display: grid;
+    gap: .75rem;
+}
+
+@media (min-width: 700px) {
+    .grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.kv {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: .6rem;
+    padding: .75rem .9rem;
+}
+
+.kv b {
+    display: block;
+    font-size: .85rem;
+    color: #555;
+    margin-bottom: .2rem;
+}
