@@ -4,92 +4,130 @@ document.addEventListener('DOMContentLoaded', () => {
   const joinForm = document.getElementById('join-form');
   if (!joinForm) return;
 
-  // 1) set the hidden timestamp when page loads (local time, YYYY-MM-DD HH:MM:SS)
+  /* =========================
+   * 1) Set hidden timestamp
+   * ========================= */
   (function setTimestamp() {
     const ts = document.getElementById('timestamp');
     if (!ts) return;
     const now = new Date();
     const pad = n => String(n).padStart(2, '0');
-    ts.value = `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())} `
-             + `${pad(now.getHours())}:${pad(now.getMinutes())}:${pad(now.getSeconds())}`;
+    ts.value =
+      `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())} ` +
+      `${pad(now.getHours())}:${pad(now.getMinutes())}:${pad(now.getSeconds())}`;
   })();
 
-  // 2) modal controls (native <dialog>)
+  /* =========================
+   * 2) Custom modal controls
+   *    (no <dialog> element)
+   * ========================= */
   const backdrop = document.querySelector('[data-backdrop]');
-  const openBtns = document.querySelectorAll('[data-open]');
-  const closeBtns = document.querySelectorAll('[data-close]');
-  const lastTrigger = new Map(); // dialog -> button that opened it
+  // support new data-modal-open plus old data-open (back-compat)
+  const openers = document.querySelectorAll('[data-modal-open], [data-open]');
+  const lastActiveByModal = new Map();
 
-  function firstFocusable(el) {
-    return el.querySelector(
+  function getFirstFocusable(root) {
+    return root.querySelector(
       'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
     );
   }
 
-  function openModal(id, trigger) {
-    const dlg = document.getElementById(id);
-    if (!dlg || typeof dlg.showModal !== 'function') return;
+  function resolveModalId(datasetValue) {
+    // new buttons pass "np", "bronze", etc.
+    // old buttons may pass "modal-np", etc.
+    if (!datasetValue) return null;
+    return datasetValue.startsWith('modal-') ? datasetValue : `modal-${datasetValue}`;
+  }
 
-    lastTrigger.set(dlg, trigger || null);
-    dlg.showModal();
-    // show optional custom backdrop if you're using it
-    if (backdrop) backdrop.hidden = false;
+  function openModal(idLike, triggerEl) {
+    const modalId = resolveModalId(idLike);
+    const modal = document.getElementById(modalId);
+    if (!modal) return;
 
-    // focus the first focusable inside the dialog (or the dialog itself)
-    (firstFocusable(dlg) || dlg).focus();
+    lastActiveByModal.set(modal, triggerEl || null);
 
-    // Esc key closes (cancel event)
-    dlg.addEventListener(
-      'cancel',
-      e => {
-        e.preventDefault();
-        closeModal(dlg);
-      },
-      { once: true }
-    );
+    // show
+    backdrop && (backdrop.hidden = false);
+    modal.hidden = false;
+    document.body.style.overflow = 'hidden';
 
-    // very light focus trap
-    dlg.addEventListener('keydown', function trapTab(e) {
+    // focus management
+    (getFirstFocusable(modal) || modal).focus();
+
+    // simple focus trap while open
+    function trapTab(e) {
       if (e.key !== 'Tab') return;
-      const nodes = [...dlg.querySelectorAll(
+      const nodes = [...modal.querySelectorAll(
         'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
       )].filter(n => !n.disabled && n.offsetParent !== null);
 
       if (!nodes.length) return;
-
       const first = nodes[0];
-      const last = nodes[nodes.length - 1];
+      const last  = nodes[nodes.length - 1];
 
       if (!e.shiftKey && document.activeElement === last) {
         e.preventDefault(); first.focus();
       } else if (e.shiftKey && document.activeElement === first) {
         e.preventDefault(); last.focus();
       }
-    }, { once: true });
+    }
+    modal.addEventListener('keydown', trapTab, { once: false });
+
+    // store to remove later when closing
+    modal._trapTabHandler = trapTab;
   }
 
-  function closeModal(dlg) {
-    if (!dlg?.open) return;
-    dlg.close();
-    if (backdrop) backdrop.hidden = true;
+  function closeModal(modal) {
+    if (!modal || modal.hidden) return;
 
-    const trigger = lastTrigger.get(dlg);
-    if (trigger) trigger.focus();
+    // hide
+    modal.hidden = true;
+
+    // if no other modals are open, hide backdrop & unlock scroll
+    const anyOpen = document.querySelector('.modal:not([hidden])');
+    if (!anyOpen) {
+      backdrop && (backdrop.hidden = true);
+      document.body.style.overflow = '';
+    }
+
+    // cleanup focus trap
+    if (modal._trapTabHandler) {
+      modal.removeEventListener('keydown', modal._trapTabHandler);
+      delete modal._trapTabHandler;
+    }
+
+    // return focus to opener
+    const opener = lastActiveByModal.get(modal);
+    if (opener && typeof opener.focus === 'function') opener.focus();
   }
 
-  openBtns.forEach(btn => {
-    btn.addEventListener('click', () => openModal(btn.dataset.open, btn));
-  });
-
-  closeBtns.forEach(btn => {
+  // open buttons
+  openers.forEach(btn => {
     btn.addEventListener('click', () => {
-      const dlg = btn.closest('dialog');
-      if (dlg) closeModal(dlg);
+      const idLike = btn.dataset.modalOpen || btn.dataset.open; // support both
+      openModal(idLike, btn);
     });
   });
 
-  // clicking the custom backdrop closes any open dialog
+  // close buttons (new data-modal-close)
+  document.addEventListener('click', e => {
+    const closeBtn = e.target.closest('[data-modal-close]');
+    if (closeBtn) {
+      const modal = closeBtn.closest('.modal');
+      closeModal(modal);
+    }
+  });
+
+  // close when clicking the backdrop
   backdrop?.addEventListener('click', () => {
-    document.querySelectorAll('dialog[open]').forEach(closeModal);
+    document.querySelectorAll('.modal:not([hidden])').forEach(m => closeModal(m));
+  });
+
+  // Esc to close the topmost open modal
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      const openTop = document.querySelector('.modal:not([hidden])');
+      if (openTop) closeModal(openTop);
+    }
   });
 });
