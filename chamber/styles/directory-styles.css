@@ -304,7 +304,6 @@ h6 {
    ───────────────────────────────────────────────────────── */
 
 .weather-card {
-    flex: 0 1 360px;
     margin: 0;
     padding: 0 0 12px 0;
 }
@@ -585,7 +584,7 @@ footer {
     }
 
     .weather-card {
-        flex: 1 1 360px;
+        flex: 1 1 560px;
     }
 
     .dir-grid {
