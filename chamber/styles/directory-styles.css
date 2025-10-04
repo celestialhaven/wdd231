@@ -579,7 +579,7 @@ h6 {
     animation-delay: .24s;
 }
 
-/* ===== Modal overlay + centering ===== */
+/* Modal overlay + centering */
 .modal-backdrop[hidden],
 .modal[hidden] {
     display: none;
@@ -588,22 +588,19 @@ h6 {
 .modal-backdrop {
     position: fixed;
     inset: 0;
-    /* top:0 right:0 bottom:0 left:0 */
     background: rgba(0, 0, 0, .55);
     backdrop-filter: blur(1px);
     z-index: 9000;
-    /* above everything */
 }
 
 .modal {
     position: fixed;
     inset: 0;
     display: grid;
-    /* easy centering */
     place-items: center;
     z-index: 9010;
-    padding: 20px;
-    /* small gutter for tiny screens */
+    padding: 1rem;
+    /* gutter for small screens */
 }
 
 .modal-panel {
@@ -612,7 +609,7 @@ h6 {
     background: #fff;
     color: #111;
     box-shadow: 0 20px 60px rgba(0, 0, 0, .35);
-    padding: 40px 40px;
+    padding: 1.2rem 1.3rem 1.3rem;
     position: relative;
     animation: modal-pop .18s ease-out;
 }
@@ -626,8 +623,25 @@ h6 {
     font-size: 1.8rem;
     background: transparent;
     border: 0;
-    color: #fff;
     cursor: pointer;
+}
+
+@keyframes modal-pop {
+    from {
+        transform: translateY(6px) scale(.98);
+        opacity: 0;
+    }
+
+    to {
+        transform: none;
+        opacity: 1;
+    }
+}
+
+/* dark mode optional */
+:root.dark .modal-panel {
+    background: #1d1d1f;
+    color: #f2f2f3;
 }
 
 /* tiny polish */
