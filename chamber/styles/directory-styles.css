@@ -579,7 +579,6 @@ h6 {
     animation-delay: .24s;
 }
 
-/* Modal overlay + centering */
 .modal-backdrop[hidden],
 .modal[hidden] {
     display: none;
@@ -600,7 +599,6 @@ h6 {
     place-items: center;
     z-index: 9010;
     padding: 1rem;
-    /* gutter for small screens */
 }
 
 .modal-panel {
@@ -639,13 +637,11 @@ h6 {
     }
 }
 
-/* dark mode optional */
 :root.dark .modal-panel {
     background: #1d1d1f;
     color: #f2f2f3;
 }
 
-/* tiny polish */
 @keyframes modal-pop {
     from {
         transform: translateY(6px) scale(.98);
@@ -658,7 +654,7 @@ h6 {
     }
 }
 
-/* optional dark theme support */
+
 :root.dark .modal-panel {
     background: #1d1d1f;
     color: #f2f2f3;
