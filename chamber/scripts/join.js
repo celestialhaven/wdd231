@@ -1,4 +1,67 @@
 
+
+const root     = document.documentElement;       
+const nav      = document.getElementById('primary-menu'); 
+const openBtn  = document.querySelector('.menu-toggle');  
+const closeBtn = document.querySelector('.menu-close');  
+
+const isDesktop = () => window.matchMedia('(min-width:768px)').matches;
+
+function openMenu() {
+  nav.classList.add('open');       
+  root.classList.add('nav-open');   
+  openBtn?.setAttribute('aria-expanded', 'true');
+  openBtn?.setAttribute('aria-label', 'Close menu');
+}
+
+function closeMenu() {
+  nav.classList.remove('open');
+  root.classList.remove('nav-open');
+  openBtn?.setAttribute('aria-expanded', 'false');
+  openBtn?.setAttribute('aria-label', 'Open menu');
+}
+
+openBtn?.addEventListener('click', openMenu);
+closeBtn?.addEventListener('click', closeMenu);
+
+document.querySelectorAll('#primary-menu a').forEach(a =>
+  a.addEventListener('click', closeMenu)
+);
+
+window.addEventListener('resize', () => { if (isDesktop()) closeMenu(); });
+
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
+
+
+const themeBtn = document.querySelector('.theme-toggle');
+themeBtn?.addEventListener('click', () => {
+  const active = root.classList.toggle('dark');
+  themeBtn.setAttribute('aria-pressed', String(active));
+  try { localStorage.setItem('theme', active ? 'dark' : 'light'); } catch {}
+});
+
+try {
+  const saved = localStorage.getItem('theme');
+  if (saved === 'dark') {
+    root.classList.add('dark');
+    themeBtn?.setAttribute('aria-pressed', 'true');
+  }
+} catch {}
+
+document.addEventListener("DOMContentLoaded", function () {
+  const currentYear = new Date().getFullYear();
+  const yearElement = document.getElementById("currentyear");
+  if (yearElement) {
+    yearElement.textContent = ` ${currentYear}`;
+  }
+
+  const lastModified = document.lastModified;
+  const modifiedElement = document.getElementById("lastModified");
+  if (modifiedElement) {
+    modifiedElement.textContent = `Last Modified: ${lastModified}`;
+  }
+});
+
 document.addEventListener('DOMContentLoaded', () => {
 
   const joinForm = document.getElementById('join-form');
