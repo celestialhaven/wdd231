@@ -1,0 +1,21 @@
+@media only screen and (min-width: 38em) {
+    
+    #places article {
+            display: grid;
+            grid-template-areas:
+                "image name"
+                "image description"
+                "image address"
+                "image button";
+        }
+    
+    #places article figure {
+        width: 350px;
+    }
+
+    .section-title {
+        font-size: 35px;
+        margin: 40px 10px 20px 10px;
+    }
+
+}

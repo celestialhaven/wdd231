@@ -26,8 +26,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&family=Poppins:wght@400;600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
     <link rel="stylesheet" href="./styles/directory-styles.css">
-    <script src="./scripts/directory-scripts.js" defer></script>
+    <link rel="stylesheet" href="./styles/base.css">
+    <link rel="stylesheet" href="./styles/small.css">
+    <link rel="stylesheet" href="./styles/medium.css">
+    <link rel="stylesheet" href="./styles/large.css">
+
+
+    <script src="./scripts/places.js" type="module" defer></script>
 </head>
 <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -63,6 +70,20 @@
             </div>
         </div>
     </header>
+
+    <main>
+        <!-- Last-visit message (inline) -->
+        <div id="visit-msg" class="visit-msg" hidden role="status" aria-live="polite">
+            <div class="visit-msg__text" data-msg></div>
+            <button type="button" class="visit-msg__close" data-close aria-label="Dismiss message">×</button>
+        </div>
+        
+        <section class="places-wrap">
+            <h2 class="section-title">Interesting Places in Cagayan de Oro</h2>
+            <div id="places" class="places-grid" aria-live="polite"></div>
+        </section>
+
+    </main>
 
     <footer>
         <div class="social-media">

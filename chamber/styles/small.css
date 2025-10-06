@@ -1,0 +1,138 @@
+.places-wrap,
+.place-card {
+    width: 100%;
+}
+
+.place-media img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.section-title {
+    font-size: 28px;
+    margin: 10px;
+}
+
+.place-card {
+    background-color: #f8f8f8;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    transition: 0.3s ease-in-out;
+}
+
+.place-card:hover {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+
+.places-grid {
+    padding: 10px;
+}
+
+.place-card>h3 {
+    font-size: 22px;
+    margin: 20px 20px;
+}
+
+.place-address, .place-desc, .place-cta {
+    margin: 15px 20px;
+}
+
+.place-cta {
+    grid-area: cta;
+    align-self: end;
+}
+
+.place-cta .discover-btn {
+    display: inline-block;
+    text-decoration: none;
+    padding: 0.55rem 0.85rem;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    background: #111;
+    color: #fff;
+    font-size: 0.9rem;
+    transition: transform 120ms ease, opacity 120ms ease, background 120ms ease;
+}
+
+.place-cta .discover-btn:hover {
+    transform: translateY(-1px);
+    opacity: 0.95;
+}
+
+#places article {
+    display: grid;
+    grid-template-areas: 
+    "name"
+    "image"
+    "description"
+    "address"
+    "button";
+    
+}
+
+#places article h3 {
+    grid-area: name;
+}
+
+#places article figure {
+    grid-area: image;
+}
+
+#places article .place-desc {
+    grid-area: description;
+}
+
+#places article .place-address {
+    grid-area: address;
+}
+
+#places article .place-cta {
+    grid-area: button;
+}
+
+.visit-msg.as-overlay {
+    position: fixed;
+    left: 1rem;
+    right: 1rem;
+    bottom: max(1rem, env(safe-area-inset-bottom));
+    z-index: 10000;
+    max-width: 720px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: .5rem .75rem;
+    background: #111;
+    color: #fff;
+    padding: 10px 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .12);
+    animation: visit-pop 180ms ease-out;
+    pointer-events: auto;
+}
+
+.visit-msg__text {
+    color: #fff;
+}
+
+.visit-msg__close {
+    appearance: none;
+    border: 0;
+    background: transparent;
+    color: #fff;
+    /* visible on dark bg */
+    font-size: 1.25rem;
+    line-height: 1;
+    cursor: pointer;
+    /* bigger tap target */
+    --tap: 40px;
+    width: var(--tap);
+    height: var(--tap);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: auto;
+    z-index: 1;
+    /* sit above content */
+}
