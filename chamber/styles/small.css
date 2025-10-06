@@ -96,7 +96,7 @@
     position: fixed;
     left: 1rem;
     right: 1rem;
-    bottom: max(1rem, env(safe-area-inset-bottom));
+    bottom: 1rem;
     z-index: 10000;
     max-width: 720px;
     margin: 0 auto;
