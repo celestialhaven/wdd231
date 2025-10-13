@@ -16,9 +16,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (payloadEl) payloadEl.textContent = '';
     return;
   }
-  
+
   // ✅ Keep API summary visible for demo
   if (statusEl)   statusEl.textContent = data.sentToServer ? 'Sent to API ✅' : 'Saved locally (offline) 🗂️';
   if (serverIdEl) serverIdEl.textContent = data.serverResponse?.id ?? '—';
-  if (payloadEl)  payloadEl.textContent = ''; // hides JSON payload
+  if (payloadEl)  payloadEl.textContent = '';
 });
