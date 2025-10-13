@@ -62,14 +62,55 @@
   function stopTrap(){ if (trapHandler){ document.removeEventListener('keydown', trapHandler); trapHandler = null; } }
 })();
 
-/* ========== SERVICES (fallback data) ========== */
 const SERVICES = [
-  { title: "CRM", desc: "Our CRM empowers us to build stronger customer relationships, streamline sales, and deliver personalized experiences for lasting satisfaction.", btn: "Learn More", href: "pricing-plans.html", img: "images/crm-image.webp", mediaText: "CRM Image" },
-  { title: "Web Desinging", desc: "Crafting personalized, visually stunning, and user-friendly websites tailored to your brand, enhancing engagement and driving results.", btn: "Learn More", href: "pricing-plans.html", img: "images/web-designin.webp", mediaText: "Web Design" },
-  { title: "Social Media Marketing", desc: "Boost your brand’s presence with tailored social media marketing strategies that engage, connect, and drive customer loyalty.", btn: "Learn More", href: "pricing-plans.html", img: "images/social-media-marketing.webp", mediaText: "Social Media Marketing" },
-  { title: "Professional Video Editing", desc: "Transform your raw footage into stunning, personalized stories with our professional video editing expertise and creative flair.", btn: "Learn More", href: "pricing-plans.html", img: "images/professional-video-editing.webp", mediaText: "Professional Video Editing" },
-  { title: "SEO", desc: "Boost your online presence with my personalized SEO strategies, driving targeted traffic and improving search rankings.", btn: "Learn More", href: "pricing-plans.html", img: "images/SEO.webp", mediaText: "Search Engine Optimization" },
-  { title: "Targetd Ads", desc: "Personalized targeted ads connect your business with the right audience, increasing engagement, conversions, and customer satisfaction effectively.", btn: "Learn More", href: "pricing-plans.html", img: "images/targeted-ads.webp", mediaText: "Targetd Ads" }
+  {
+    title: "CRM",
+    desc: "Our CRM empowers us to build stronger customer relationships, streamline sales, and deliver personalized experiences for lasting satisfaction.",
+    btn: "Learn More",
+    href: "pricing-plans.html",
+    img: "images/crm-image.webp",
+    mediaText: "CRM Image"
+  },
+  {
+    title: "Web Desinging",
+    desc: "Crafting personalized, visually stunning, and user-friendly websites tailored to your brand, enhancing engagement and driving results.",
+    btn: "Learn More",
+    href: "pricing-plans.html",
+    img: "images/web-designin.webp",
+    mediaText: "Web Design"
+  },
+  {
+    title: "Social Media Marketing",
+    desc: "Boost your brand’s presence with tailored social media marketing strategies that engage, connect, and drive customer loyalty.",
+    btn: "Learn More",
+    href: "pricing-plans.html",
+    img: "images/social-media-marketing.webp",
+    mediaText: "Social Media Marketing"
+  },
+  {
+    title: "Professional Video Editing",
+    desc: "Transform your raw footage into stunning, personalized stories with our professional video editing expertise and creative flair.",
+    btn: "Learn More",
+    href: "pricing-plans.html",
+    img: "images/professional-video-editing.webp",
+    mediaText: "Professional Video Editing"
+  },
+  {
+    title: "SEO",
+    desc: "Boost your online presence with my personalized SEO strategies, driving targeted traffic and improving search rankings.",
+    btn: "Learn More",
+    href: "pricing-plans.html",
+    img: "images/SEO.webp",
+    mediaText: "Search Engine Optimization"
+  },
+  {
+    title: "Targetd Ads",
+    desc: "Personalized targeted ads connect your business with the right audience, increasing engagement, conversions, and customer satisfaction effectively.",
+    btn: "Learn More",
+    href: "pricing-plans.html",
+    img: "images/targeted-ads.webp",
+    mediaText: "Targetd Ads"
+  }
 ];
 
 /* ========== CARD RENDERER ========== */
