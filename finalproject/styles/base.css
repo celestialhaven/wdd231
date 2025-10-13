@@ -1,0 +1,230 @@
+/* large screen css design */
+
+body {
+    font-family: "Barlow Semi Condensed", sans-serif;
+    font-weight: 400;
+    padding: 0;
+    margin: 0;
+}
+
+p {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+}
+
+.courseTitle {
+    display: block;
+    padding: 20px 0 20px 0;
+    text-align: center;
+    font-size: 35px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background: #2a2a2a;
+}
+
+nav ul {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    list-style-type: none;
+    
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 24px;
+    padding: 10px;
+    transition: 0.3s ease-in-out;
+}
+
+nav a:hover {
+    color: gold;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+h3 {
+    text-align: left;
+}
+
+.sectionContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.card {
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}
+
+.aboutMe {
+    display: flex;
+    gap: 20px;
+    padding: 24px;
+}
+
+.aboutMe img {
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+h2 {
+    background-color: #2a2a2a;
+    color: #fff;
+    margin: 0;
+    padding: 20px;
+    border-radius: 8px 8px 0 0;
+}
+
+.bioGraphy {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+.bioGraphy img {
+    width: 250px;
+    height: 120px;
+    object-fit: cover;
+}
+
+.countryFlag p {
+    text-align: center;
+}
+
+.resourcesContainer {
+    display: flex;
+    margin-top: 150px;
+}
+
+.resourcesContainer {
+    display: flex;
+    height: 350px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+}
+
+.resourcesContainer ul {
+    padding: 0;
+}
+
+.resourcesContainer ul li {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    font-size: 24px;
+    padding: 10px;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #2a2a2a;
+    padding: 10px;
+}
+
+footer p {
+    margin: 0;
+    padding: 5px;
+    color: #fff;
+}
+
+
+/* tablet screen css design */
+
+@media (min-width: 577px) and (max-width: 768px) {
+
+    .bioGraphy {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+    h3 {
+        text-align: left;
+    }
+
+
+ }
+
+
+ /* mobile screen css design */
+
+@media only screen and (max-width: 576px) {
+
+    nav ul {
+        display: flex;
+        padding: 0;
+    }
+
+    nav ul li a {
+        font-size: 20px;
+        
+    }
+    .courseTitle {
+        font-size: 20px;
+    }
+
+        h3 {
+            text-align: center;
+        }
+
+    .aboutMe {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .firstColumn {
+        order: 2;
+    }
+
+    .firstColumn p {
+        text-align: center;
+    }
+
+    .secondColumn {
+        display: flex;
+        order: 1;
+    }
+
+    .secondColumn img {
+        width: 100%;
+        height: 450px;
+    }
+
+    .bioGraphy {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .bioGraphy p {
+        text-align: center;
+    }
+
+    .resourcesContainer {
+        display: flex;
+        height: 350px;
+        justify-content: center;
+        align-items: center;
+        margin-top: 0;
+    }
+
+}

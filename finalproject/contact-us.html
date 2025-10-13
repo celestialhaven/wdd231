@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Jones G. Mabala">
+    <title>Celestial Virtual Assistant Agency</title>
+    
+    <meta name="description"
+        content="Create a user-friendly product review form to collect customer feedback, ratings, and comments for better product insights.">
+
+    <!-- Celestial VA Agency Meta & Open Graph -->
+    <link rel="icon" href="images/favicon.ico" sizes="any">
+    
+    <meta name="description"
+        content="Celestial VA Agency provides professional virtual assistant services — helping entrepreneurs, creators, and business owners save time, stay organized, and scale efficiently." />
+    <meta name="author" content="Celestial VA Agency - Jones Mabala">
+    
+    <meta property="og:title" content="Celestial VA Agency – Your Trusted Virtual Assistant Partner">
+    <meta property="og:description"
+        content="Experience seamless support with Celestial VA Agency. We specialize in admin management, client communication, scheduling, and business productivity for busy professionals." />
+    <meta property="og:locale" content="en_US">
+    <meta property="og:image" content="https://celestialvaagency.com/finalproject/images/SEO.webp">
+    <meta property="og:url" content="https://celestialvaagency.com/">
+    <meta property="og:type" content="website">
+
+    <link rel="stylesheet" href="styles/project.css">
+    <link rel="stylesheet" href="styles/laptop.css">
+    <link rel="stylesheet" href="styles/tablet.css">
+    <link rel="stylesheet" href="styles/mobile.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&family=Poppins:wght@400;600&display=swap"
+        rel="stylesheet">
+    <script src="scripts/project.js" defer></script>
+</head>
+<body>
+    <!-- Header / Nav -->
+    <header class="site-header">
+        <div class="container">
+            <div class="brand">Celestial VA Agency</div>
+            <!-- Mobile toggle -->
+            <button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Open menu">
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+            </button>
+            <!-- Desktop nav / Mobile panel -->
+            <nav class="nav" id="primary-nav" aria-label="Primary">
+                <a href="home.html">Home</a>
+                <a href="pricing-plans.html">Pricing Plans</a>
+                <a href="contact-us.html" class="cta-link">Contact Us</a>
+                <a class="btn btn-primary btn-small header-cta" href="contact-us.html">Let's Get Started</a>
+            </nav>
+        </div>
+        <!-- Click-off backdrop -->
+        <div class="nav-scrim" hidden></div>
+    </header>
+    <main style="padding-top: 120px; padding-bottom: 120px;">
+        <!-- Contact -->
+        <div class="contact">
+            <div class="container">
+                <h2 class="section-title">Contact Us</h2>
+                <p style="max-width: 600px;">Get in touch with us today for inquiries, support, or personalized assistance—we’re here to help you every step of the
+                way.</p>
+                <form id="contactForm" class="contact-form">
+                    <input id="fullName" type="text" placeholder="Full Name" aria-label="Full Name" required />
+                    <input id="email" type="email" placeholder="Email Address" aria-label="Email Address" required />
+        
+                    <select id="service" aria-label="Select Service" required>
+                        <option value="">-- Select a Service --</option>
+                        <option value="Virtual Assistance">CRM</option>
+                        <option value="Social Media Management">Web Designing</option>
+                        <option value="Content Writing">Social Media Marketing</option>
+                        <option value="Data Entry">Professional Video Editing</option>
+                        <option value="Customer Support">SEO</option>
+                        <option value="Customer Support">Targeted Ads</option>
+                    </select>
+                    <textarea id="message" rows="6" placeholder="Your Message" aria-label="Your Message" required></textarea>
+                    <button class="btn btn-primary" type="submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <div class="brand">Celestial VA Agency</div>
+                <p>Short about text goes here. Keep it brief and helpful for visitors.</p>
+            </div>
+            <div class="footer-col">
+                <h5>Services</h5>
+                <ul>
+                    <li><a href="pricing-plans.html">CRM</a></li>
+                    <li><a href="pricing-plans.html">Web Designing</a></li>
+                    <li><a href="pricing-plans.html">Social Media Marketing</a></li>
+                    <li><a href="pricing-plans.html">Professional Video Editing</a></li>
+                    <li><a href="pricing-plans.html">SEO</a></li>
+                    <li><a href="pricing-plans.html">Targeted Ads</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>Quick Links</h5>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="contact-us.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>Social Media</h5>
+                <ul class="socials">
+                    <li><a href="#"><i class="fa-brands fa-x-twitter"></i> Twitter</a></li>
+                    <li><a href="#"><i class="fa-brands fa-youtube"></i> YouTube</a></li>
+                    <li><a href="#"><i class="fa-brands fa-facebook"></i> Facebook</a></li>
+                </ul>
+                <a class="btn btn-small btn-outline" href="mailto:support@domain.com">support@domain.com</a>
+            </div>
+        </div>
+        <div class="legal">
+            <div class="container">
+                <span>© 2025 Company</span>
+                <span>SEO and Web Design by Contact Designer</span>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

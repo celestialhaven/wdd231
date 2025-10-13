@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Jones G. Mabala">
+    <title>Celestial Virtual Assistant Agency</title>
+    <meta name="description"
+        content="Create a user-friendly product review form to collect customer feedback, ratings, and comments for better product insights.">
+
+    <!-- Celestial VA Agency Meta & Open Graph -->
+    <link rel="icon" href="images/favicon.ico" sizes="any">
+    
+    <meta name="description"
+        content="Celestial VA Agency provides professional virtual assistant services — helping entrepreneurs, creators, and business owners save time, stay organized, and scale efficiently." />
+    <meta name="author" content="Celestial VA Agency - Jones Mabala">
+    
+    <meta property="og:title" content="Celestial VA Agency – Your Trusted Virtual Assistant Partner">
+    <meta property="og:description"
+        content="Experience seamless support with Celestial VA Agency. We specialize in admin management, client communication, scheduling, and business productivity for busy professionals." />
+    <meta property="og:locale" content="en_US">
+    <meta property="og:image" content="https://celestialvaagency.com/images/celestial-va-agency-og.jpg">
+    <meta property="og:url" content="https://celestialvaagency.com/">
+    <meta property="og:type" content="website">
+
+
+    <link rel="stylesheet" href="styles/project.css">
+    <link rel="stylesheet" href="styles/laptop.css">
+    <link rel="stylesheet" href="styles/tablet.css">
+    <link rel="stylesheet" href="styles/mobile.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&family=Poppins:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <script src="scripts/project.js" defer></script>
+    <script src="scripts/submitted.js" defer></script>
+</head>
+
+<body>
+    <!-- Header / Nav -->
+    <header class="site-header">
+        <div class="container">
+            <div class="brand">Celestial VA Agency</div>
+            <!-- Mobile toggle -->
+            <button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Open menu">
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+            </button>
+            <!-- Desktop nav / Mobile panel -->
+            <nav class="nav" id="primary-nav" aria-label="Primary">
+                <a href="home.html">Home</a>
+                <a href="pricing-plans.html">Pricing Plans</a>
+                <a href="contact-us.html" class="cta-link">Contact Us</a>
+                <a class="btn btn-primary btn-small header-cta" href="contact-us.html">Let's Get Started</a>
+            </nav>
+        </div>
+        <!-- Click-off backdrop -->
+        <div class="nav-scrim" hidden></div>
+    </header>
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <p class="eyebrow">We are here for you</p>
+                <h1 class="hero-title">The Most Trusted Virtual Assistant</h1>
+                <p class="subtext">
+                    We deliver reliable, efficient, and personalized support, helping businesses streamline tasks, boost
+                    productivity, and
+                    achieve goals with professionalism and confidentiality.
+                </p>
+                <a class="btn btn-outline" href="contact-us.html">Contact Us</a>
+
+                <picture class="hero-image">
+                    <source srcset="images/crm-mobile-screen.png" media="(max-width: 600px)">
+                    <source srcset="images/crm-laptop-screen.png" media="(max-width: 1024px)">
+                    <img src="images/crm.png" alt="CRM Tools">
+                </picture>
+            </div>
+        </section>
+        <!-- Services -->
+        <section id="services" class="services">
+            <div class="container">
+                <p class="eyebrow">Our Services</p>
+                <h2 class="section-title">Our VA Services That You Can Trust</h2>
+                <p class="section-subtext">Our Comprehensive VA Services provide personalized support, streamlining your
+                    tasks, and boosting
+                    productivity so you can focus on growth, success, and what matters most to you.</p>
+                <div class="service-grid top" id="servicesTop"></div>
+                <div class="service-grid bottom" id="servicesBottom"></div>
+            </div>
+        </section>
+        <!-- Why Choose Us -->
+        <section class="why">
+            <div class="container">
+                <p class="eyebrow">Why Choose Us</p>
+                <h2 class="section-title">Expert and Professional VA Services Tailored To Your Needs.</h2>
+                <p class="section-subtext">
+                    Expert and professional VA services delivering personalized support, streamlining tasks, enhancing
+                    productivity, and
+                    ensuring your business runs smoothly with efficiency, precision, and attention to every detail.
+                </p>
+                <div class="icon-grid">
+                    <div class="icon-card">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <h4>Boost Productivity</h4>
+                        <p>Our VAs handle time-consuming tasks so you can focus on core business priorities and growth..
+                        </p>
+                    </div>
+                    <div class="icon-card">
+                        <i class="fa-solid fa-sliders-h"></i>
+                        <h4>Tailored Solutions</h4>
+                        <p>We adapt our services to your unique business needs for maximum efficiency and measurable
+                            results.</p>
+                    </div>
+                    <div class="icon-card">
+                        <i class="fa-solid fa-dollar-sign"></i>
+                        <h4>Cost-Effective Support</h4>
+                        <p>Get professional assistance without the overhead of hiring full-time staff, saving money and
+                            resources.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- About -->
+        <section class="dark-slab">
+            <div class="container">
+                <p class="eyebrow">About Us</p>
+                <h2 class="section-title">Your Trusted Partner for Professional Virtual Assistant Solutions</h2>
+                <p class="section-subtext">
+                    We provide expert virtual assistant services tailored to your needs, helping businesses streamline
+                    operations, save
+                    time, and achieve success with reliable, dedicated, and professional support.
+                </p>
+                <a class="btn btn-primary" href="contact-us.html">Let's Get Started</a>
+            </div>
+        </section>
+        <!-- Testimonials -->
+        <section class="testimonials">
+            <div class="container">
+                <p class="eyebrow">Testimonials</p>
+                <h2 class="section-title">What Client Says With Our Services</h2>
+                <p class="section-subtext">
+                    Hear from our satisfied clients who have experienced exceptional virtual assistant services,
+                    improved efficiency, and
+                    business growth through our dedicated, professional, and personalized support. Your success is our
+                    mission.
+                </p>
+                <div class="carousel-wrapper">
+                    <button class="prev" aria-label="Previous">&#10094;</button>
+                    <div class="carousel" aria-label="Image carousel">
+                        <div class="card placeholder">
+                            <img src="images/Alycia-Worsley.png" alt="Sarah Mendez">
+                            <h4>Sarah Mendez</h4>
+                            <p>"Outstanding VA service! They manage my schedule, emails, and projects seamlessly,
+                                allowing me to focus
+                                entirely on growing my business."</p>
+                        </div>
+                        <div class="card placeholder">
+                            <img src="images/Taylor-Dowdy.png" alt="Olivia Brooks">
+                            <h4>Olivia Brooks</h4>
+                            <p>"Professional, detail-oriented, and always on time. Their personalized approach makes
+                                them an
+                                indispensable part of my business success."</p>
+                        </div>
+                        <div class="card placeholder">
+                            <img src="images/unnamed.png" alt="James Carter">
+                            <h4>James Carter</h4>
+                            <p>"Reliable, efficient, and proactive. Their support has transformed my workflow, saving
+                                time and
+                                increasing productivity beyond what I imagined."</p>
+                        </div>
+                        <div class="card placeholder">
+                            <img src="images/Sherry-Wright.png" alt="Daniel Price">
+                            <h4>Daniel Price</h4>
+                            <p>"From admin tasks to client follow-ups, their services are flawless. I trust them
+                                completely to keep
+                                operations running smoothly."</p>
+                        </div>
+                    </div>
+                    <button class="next" aria-label="Next">&#10095;</button>
+                </div>
+            </div>
+        </section>
+        <!-- Contact -->
+        <div class="contact">
+            <div class="container">
+                <h2 class="section-title">Contact Us</h2>
+                <form id="contactForm" class="contact-form">
+                    <input id="fullName" type="text" placeholder="Full Name" aria-label="Full Name" required />
+                    <input id="email" type="email" placeholder="Email Address" aria-label="Email Address" required />
+
+                    <select id="service" aria-label="Select Service" required>
+                        <option value="">-- Select a Service --</option>
+                        <option value="Virtual Assistance">CRM</option>
+                        <option value="Social Media Management">Web Designing</option>
+                        <option value="Content Writing">Social Media Marketing</option>
+                        <option value="Data Entry">Professional Video Editing</option>
+                        <option value="Customer Support">SEO</option>
+                        <option value="Customer Support">Targeted Ads</option>
+                    </select>
+                    <textarea id="message" rows="6" placeholder="Your Message" aria-label="Your Message"
+                        required></textarea>
+                    <button class="btn btn-primary" type="submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <div class="brand">Celestial VA Agency</div>
+                <p>Short about text goes here. Keep it brief and helpful for visitors.</p>
+            </div>
+            <div class="footer-col">
+                <h5>Services</h5>
+                <ul>
+                    <li><a href="pricing-plans.html">CRM</a></li>
+                    <li><a href="pricing-plans.html">Web Designing</a></li>
+                    <li><a href="pricing-plans.html">Social Media Marketing</a></li>
+                    <li><a href="pricing-plans.html">Professional Video Editing</a></li>
+                    <li><a href="pricing-plans.html">SEO</a></li>
+                    <li><a href="pricing-plans.html">Targeted Ads</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>Quick Links</h5>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="contact-us.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>Social Media</h5>
+                <ul class="socials">
+                    <li><a href="#"><i class="fa-brands fa-x-twitter"></i> Twitter</a></li>
+                    <li><a href="#"><i class="fa-brands fa-youtube"></i> YouTube</a></li>
+                    <li><a href="#"><i class="fa-brands fa-facebook"></i> Facebook</a></li>
+                </ul>
+                <a class="btn btn-small btn-outline" href="mailto:support@domain.com">support@domain.com</a>
+            </div>
+        </div>
+        <div class="legal">
+            <div class="container">
+                <span>© 2025 Company</span>
+                <span>SEO and Web Design by Contact Designer</span>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

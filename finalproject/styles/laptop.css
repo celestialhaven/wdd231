@@ -1,0 +1,22 @@
+@media (max-width: 1366px) {
+    .nav a {
+        font-size: 14px;
+    }
+
+    .brand {
+        font-size: 30px;
+    }
+
+    .hero .container,
+    .services .container,
+    .why .container,
+    .dark-slab .container,
+    .testimonials .container,
+    .contact .container {
+        width: 96%;
+    }
+
+    .site-header .container {
+        padding: 0 15px;
+    }
+}

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Jones G. Mabala">
+    <title>Celestial Virtual Assistant Agency</title>
+    <meta name="description"
+        content="Create a user-friendly product review form to collect customer feedback, ratings, and comments for better product insights.">
+
+    <!-- Celestial VA Agency Meta & Open Graph -->
+    <link rel="icon" href="images/favicon.ico" sizes="any">
+    
+    <meta name="description"
+        content="Celestial VA Agency provides professional virtual assistant services — helping entrepreneurs, creators, and business owners save time, stay organized, and scale efficiently." />
+    <meta name="author" content="Celestial VA Agency - Jones Mabala">
+    
+    <meta property="og:title" content="Celestial VA Agency – Your Trusted Virtual Assistant Partner">
+    <meta property="og:description"
+        content="Experience seamless support with Celestial VA Agency. We specialize in admin management, client communication, scheduling, and business productivity for busy professionals." />
+    <meta property="og:locale" content="en_US">
+    <meta property="og:image" content="https://celestialvaagency.com/images/celestial-va-agency-og.jpg">
+    <meta property="og:url" content="https://celestialvaagency.com/">
+    <meta property="og:type" content="website">
+
+
+    <link rel="stylesheet" href="styles/project.css">
+    <link rel="stylesheet" href="styles/laptop.css">
+    <link rel="stylesheet" href="styles/tablet.css">
+    <link rel="stylesheet" href="styles/mobile.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&family=Poppins:wght@400;600&display=swap"
+        rel="stylesheet">
+    <script src="scripts/project.js" defer></script>
+    <script src="scripts/price.js" defer></script>
+</head>
+
+<body>
+    <!-- Header / Nav -->
+    <header class="site-header">
+        <div class="container">
+            <div class="brand">Celestial VA Agency</div>
+
+            <!-- Mobile toggle -->
+            <button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Open menu">
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+            </button>
+
+            <!-- Desktop nav / Mobile panel -->
+            <nav class="nav" id="primary-nav" aria-label="Primary">
+                <a href="home.html">Home</a>
+                <a href="pricing-plans.html">Pricing Plans</a>
+                <a href="contact-us.html" class="cta-link">Contact Us</a>
+                <a class="btn btn-primary btn-small header-cta" href="contact-us.html">Let's Get Started</a>
+            </nav>        
+        </div>
+
+        <div class="nav-scrim" hidden></div>
+    </header>
+    <main style="margin-top: 120px; margin-bottom: 120px;">
+        <section id="services" class="services">
+            <div class="container">
+                <p class="eyebrow">Pricing Plans</p>
+                <h2 class="section-title">Our Pricing Plans, Made Just for You</h2>
+                <p class="section-subtext">Explore our flexible pricing plans designed to fit your needs, offering exceptional value, transparent costs, and
+                scalable options for businesses of all sizes.</p>
+                <div class="prc-wrap">
+                
+                    <!-- SECTION 1: Monthly / Annual -->
+                    <section class="prc-section" id="subscription">
+                        <div class="prc-head">
+                            <div class="prc-toggle" aria-live="polite">
+                                <span>Monthly</span>
+                                <label class="prc-switch" aria-label="Toggle annual billing">
+                                    <input type="checkbox" id="billToggle" />
+                                    <span class="knob"></span>
+                                </label>
+                                <span>Annual <span class="prc-badge">Save 15%</span></span>
+                            </div>
+                        </div>
+                
+                        <div class="prc-grid">
+                            <!-- Left: Image placeholder -->
+                            <figure class="prc-box prc-box--img" style="background:url('images/SEO.webp') center/cover no-repeat;"
+                                aria-label="Illustration"></figure>
+                
+                            <!-- Right: Pricing Plans -->
+                            <div class="prc-box" aria-label="Pricing Plans">
+                                <div class="prc-plans" id="plansList">
+                                    <!-- Example cards – replace with your real tiers -->
+                                    <div class="prc-card">
+                                        <div>
+                                            <div class="name">Starter</div>
+                                            <div class="prc-note">Great for trying things out</div>
+                                        </div>
+                                        <div class="price" data-month="$500/mo" data-year="$5,100/yr">$29/mo</div>
+                                    </div>
+                
+                                    <div class="prc-card">
+                                        <div>
+                                            <div class="name">Growth</div>
+                                            <div class="prc-note">For small teams</div>
+                                        </div>
+                                        <div class="price" data-month="$650/mo" data-year="$6,630/yr">$79/mo</div>
+                                    </div>
+                
+                                    <div class="prc-card">
+                                        <div>
+                                            <div class="name">Scale</div>
+                                            <div class="prc-note">Advanced support & features</div>
+                                        </div>
+                                        <div class="price" data-month="$800/mo" data-year="$8,160/yr">$149/mo</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+                
+                    <!-- SECTION 2: Project Base -->
+                    <section class="prc-section" id="project-base">
+                        <div class="prc-head">
+                            <h2 class="prc-title">Project Base</h2>
+                            <p class="prc-sub">For Web Design Only</p>
+                        </div>
+                
+                        <div class="prc-grid">
+                            <!-- Left: Pricing Plans -->
+                            <div class="prc-box" aria-label="Project Pricing Plans">
+                                <div class="prc-plans">
+                                    <div class="prc-card">
+                                        <div>
+                                            <div class="name">Landing Page</div>
+                                            <div class="prc-note">1–3 sections</div>
+                                        </div>
+                                        <div class="price">$499</div>
+                                    </div>
+                
+                                    <div class="prc-card">
+                                        <div>
+                                            <div class="name">Business Site</div>
+                                            <div class="prc-note">Up to 5 pages</div>
+                                        </div>
+                                        <div class="price">$1,499</div>
+                                    </div>
+                
+                                    <div class="prc-card">
+                                        <div>
+                                            <div class="name">E-commerce</div>
+                                            <div class="prc-note">Catalog + checkout</div>
+                                        </div>
+                                        <div class="price">$2,999</div>
+                                    </div>
+                                </div>
+                            </div>
+                
+                            <!-- Right: Image placeholder -->
+                            <figure class="prc-box prc-box--img" style="background:url('images/web-designin.webp') center/cover no-repeat;"
+                                aria-label="Illustration"></figure>
+                        </div>
+                    </section>
+                
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <div class="brand">Celestial VA Agency</div>
+                <p>Short about text goes here. Keep it brief and helpful for visitors.</p>
+            </div>
+            <div class="footer-col">
+                <h5>Services</h5>
+                <ul>
+                    <li><a href="pricing-plans.html">CRM</a></li>
+                    <li><a href="pricing-plans.html">Web Designing</a></li>
+                    <li><a href="pricing-plans.html">Social Media Marketing</a></li>
+                    <li><a href="pricing-plans.html">Professional Video Editing</a></li>
+                    <li><a href="pricing-plans.html">SEO</a></li>
+                    <li><a href="pricing-plans.html">Targeted Ads</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>Quick Links</h5>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="contact-us.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>Social Media</h5>
+                <ul class="socials">
+                    <li><a href="#"><i class="fa-brands fa-x-twitter"></i> Twitter</a></li>
+                    <li><a href="#"><i class="fa-brands fa-youtube"></i> YouTube</a></li>
+                    <li><a href="#"><i class="fa-brands fa-facebook"></i> Facebook</a></li>
+                </ul>
+                <a class="btn btn-small btn-outline" href="mailto:support@domain.com">support@domain.com</a>
+            </div>
+        </div>
+        <div class="legal">
+            <div class="container">
+                <span>© 2025 Company</span>
+                <span>SEO and Web Design by Contact Designer</span>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
