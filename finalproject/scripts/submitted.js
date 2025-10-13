@@ -1,16 +1,24 @@
-(function () {
-  const TEMP_KEY = 'lastContactSubmission';
-  const record = JSON.parse(localStorage.getItem(TEMP_KEY) || '{}');
+// submitted.js
+document.addEventListener('DOMContentLoaded', () => {
+  const statusEl   = document.getElementById('status');
+  const serverIdEl = document.getElementById('serverId');
+  const payloadEl  = document.getElementById('payload');
+  const detailsEl  = document.getElementById('submissionDetails');
 
-  if (record.fullName) {
-    document.getElementById('submissionDetails').innerHTML = `
-      <p><strong>Name:</strong> ${record.fullName}</p>
-      <p><strong>Email:</strong> ${record.email}</p>
-      <p><strong>Service:</strong> ${record.service}</p>
-      <p><strong>Message:</strong> ${record.message}</p>
-      <p><strong>Submitted At:</strong> ${new Date(record.submittedAt).toLocaleString()}</p>
-    `;
-  } else {
-    document.getElementById('submissionDetails').innerHTML = `<p>No submission data found.</p>`;
+  // Read saved submission info
+  const data = JSON.parse(localStorage.getItem('lastContactSubmission') || 'null');
+
+  // Fallback message
+  if (!data) {
+    if (detailsEl) detailsEl.textContent = 'No submission data available.';
+    if (statusEl) statusEl.textContent = 'No submission found.';
+    if (serverIdEl) serverIdEl.textContent = '—';
+    if (payloadEl) payloadEl.textContent = '';
+    return;
   }
-})();
+  
+  // ✅ Keep API summary visible for demo
+  if (statusEl)   statusEl.textContent = data.sentToServer ? 'Sent to API ✅' : 'Saved locally (offline) 🗂️';
+  if (serverIdEl) serverIdEl.textContent = data.serverResponse?.id ?? '—';
+  if (payloadEl)  payloadEl.textContent = ''; // hides JSON payload
+});

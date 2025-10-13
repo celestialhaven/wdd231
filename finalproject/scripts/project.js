@@ -88,7 +88,7 @@ const cardHTML = (item) => `
 // Tries to load /data/services.json; falls back to SERVICES if it fails.
 async function loadServices() {
   try {
-    const res = await fetch('/data/services.json', { cache: 'no-store' });
+    const res = await fetch('./data/services.json', { cache: 'no-store' });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const services = await res.json();
     renderServices(services);
