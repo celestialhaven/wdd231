@@ -1,10 +1,10 @@
-@media (max-width: 1366px) {
+@media (max-width:1366px) {
     .nav a {
-        font-size: 14px;
+        font-size: 14px
     }
 
     .brand {
-        font-size: 30px;
+        font-size: 30px
     }
 
     .hero .container,
@@ -13,10 +13,10 @@
     .dark-slab .container,
     .testimonials .container,
     .contact .container {
-        width: 96%;
+        width: 96%
     }
 
     .site-header .container {
-        padding: 0 15px;
+        padding: 0 15px
     }
 }

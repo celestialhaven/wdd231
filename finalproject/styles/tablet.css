@@ -1,45 +1,45 @@
-@media (max-width: 1024px) {
-
+@media (max-width:1024px) {
     .container .hero-title {
-        font-size: 50px;
+        font-size: 50px
     }
 
     .container .section-title {
-        font-size: 45px;
+        font-size: 45px
     }
 
-    .container .service-grid {
+    /* grid → wrap on tablet */
+    .service-grid {
         display: flex;
-        flex-wrap: wrap;
+        flex-wrap: wrap
     }
 
-    .service-card .media{
-        height: 450px;
+    .service-card .media {
+        height: 450px
     }
-    
+
     .service-card h3 {
         margin-top: 40px;
-        font-size: 30px;
+        font-size: 30px
     }
 
+    /* mobile menu pattern at tablet */
     .nav-toggle {
         display: inline-block;
-        z-index: 1002;
+        z-index: 1002
     }
 
     .header-cta {
-        display: none;
+        display: none
     }
 
     .menu-cta {
         display: block;
-        margin-top: 20px;
+        margin-top: 20px
     }
 
     .nav {
         position: fixed;
-        top: 0;
-        left: 0;
+        inset: 0 0 0 0;
         width: 100vw;
         height: 100vh;
         background: var(--dark);
@@ -51,7 +51,7 @@
         padding: 40px 20px;
         transform: translateX(-100%);
         transition: transform .3s ease;
-        z-index: 1001;
+        z-index: 1001
     }
 
     .nav a {
@@ -61,77 +61,72 @@
         background: rgba(255, 255, 255, .04);
         border: 1px solid rgba(255, 255, 255, .06);
         width: 220px;
-        text-align: center;
+        text-align: center
     }
 
     body.menu-open .nav {
-        transform: translateX(0);
+        transform: translateX(0)
     }
 
-    /* Toggle animation */
     body.menu-open .nav-toggle .nav-toggle-bar:nth-child(1) {
         top: 21px;
-        transform: rotate(45deg);
+        transform: rotate(45deg)
     }
 
     body.menu-open .nav-toggle .nav-toggle-bar:nth-child(2) {
-        opacity: 0;
+        opacity: 0
     }
 
     body.menu-open .nav-toggle .nav-toggle-bar:nth-child(3) {
         top: 21px;
-        transform: rotate(-45deg);
+        transform: rotate(-45deg)
     }
 
     .services {
-        padding: 30px;
-    }
-
-    .services {
-        padding: 0;
+        padding: 0
     }
 
     .icon-grid {
         display: flex;
-        flex-direction: column;
+        flex-direction: column
     }
 
     .why .container {
-        width: 94%;
+        width: 94%
+    }
+
+    /* testimonials layout */
+    .carousel-wrapper {
+        display: block
+    }
+
+    .testimonials .container {
+        width: 100%
+    }
+
+    .carousel .card,
+    .testimonials .card {
+        flex: 0 0 48%
     }
 
     .footer-grid {
+        display: grid;
         grid-template-columns: 1fr 1fr
     }
 
     .site-footer .footer-brand {
-        width: 25%;
+        width: 25%
     }
 
     .site-footer .container {
-        width: 100%;
+        width: 100%
     }
 
     .footer-brand p {
-        width: 100%;
-    }
-
-    /* TESTIMONIALS */
-
-    .carousel-wrapper {
-        display: block;
-    }
-
-    .card {
-        flex: 0 0 48%;
-    }
-    
-    .testimonials .container {
-        width: 100%;
+        width: 100%
     }
 
     .site-header .container {
-        padding: 0 15px;
+        padding: 0 15px
     }
-
 }
