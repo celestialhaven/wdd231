@@ -138,7 +138,7 @@ const SERVICES = [
     desc: "Transform your raw footage into stunning, personalized stories with our professional video editing expertise and creative flair.",
     btn: "Learn More",
     href: "pricing-plans.html",
-    img: "images/professional-video-editing.webp",
+    img: "images/video-editing.webp",
     mediaText: "Professional Video Editing"
   },
   {
