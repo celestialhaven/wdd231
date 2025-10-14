@@ -14,6 +14,10 @@
         font-size: 30px
     }
 
+    .hero .container, .why .container, .dark-slab .container, .contact .container {
+        width: 100%;
+    }
+
     .footer-brand {
         display: flex;
         flex-direction: column;
@@ -49,6 +53,25 @@
     .icon-grid {
         display: flex;
         flex-direction: column;
+    }
+
+    .footer-grid {
+        flex-direction: column;
+    }
+
+    .carousel-wrapper {
+        width: 100%;
+        display: flex;
+        overflow: hidden;
+        scroll-snap-type: x mandatory;
+        padding: 0;
+    }
+    
+    .carousel .card {
+        flex: 0 0 100%;
+        scroll-snap-align: center;
+        box-sizing: border-box;
+        transition: transform 0.5s ease;
     }
 }
 

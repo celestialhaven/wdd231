@@ -268,7 +268,7 @@ a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 80%;
+
     padding: 60px 0
 }
 
@@ -279,9 +279,16 @@ a {
     gap: 16px;
 }
 
+.carousel .card {
+    flex: 0 0 33%;
+    scroll-snap-align: center;
+    box-sizing: border-box;
+    transition: transform 0.5s ease;
+}
+
 .card {
+    width: 100%;
     display: block;
-    flex: 0 0 33.333%;
     box-sizing: border-box;
     padding: 70px 25px;
     border-radius: 4px;
@@ -732,10 +739,10 @@ select:focus {
 }
 
 .carousel-wrapper {
+    width: 90%;
     position: relative;
     margin: 0 auto;
     border-radius: 4px;
-    box-shadow: var(--shadow);
     padding: 12px;
 }
 
@@ -748,7 +755,6 @@ select:focus {
 
 /* Card */
 .card {
-    flex: 0 0 33.333%;
     box-sizing: border-box;
     background: #171920;
     border: 1px solid rgba(255, 255, 255, .06);
