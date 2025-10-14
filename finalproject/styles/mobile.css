@@ -1,9 +1,7 @@
 /* ≤767px */
 @media (max-width:767px) {
 
-    .services .container,
-    .why .container,
-    .testimonials .container {
+    .services .container {
         width: 96%
     }
 

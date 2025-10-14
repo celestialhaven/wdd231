@@ -74,17 +74,9 @@
         padding: 0
     }
 
-    .why .container {
-        width: 94%
-    }
-
     /* testimonials layout */
     .carousel-wrapper {
         display: block
-    }
-
-    .testimonials .container {
-        width: 100%
     }
 
     .site-footer .footer-brand {

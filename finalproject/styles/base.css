@@ -260,14 +260,6 @@ a {
     padding: 60px 0
 }
 
-.why .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 70%
-}
-
 .icon-card {
     padding: 22px;
     background: #12131a;
@@ -313,14 +305,6 @@ a {
     overflow: hidden
 }
 
-.testimonials .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 80%;
-    padding: 60px 0
-}
 
 .prev,
 .next {
