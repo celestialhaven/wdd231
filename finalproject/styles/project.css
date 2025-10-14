@@ -948,12 +948,12 @@ select:focus {
     background: var(--violet);
     color: var(--text);
     min-height: 280px;
-    padding: clamp(16px, 2vw, 24px);
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     transition: transform 0.3s ease;
+    padding: 20px;
 }
 
 .prc-box:hover {
@@ -961,9 +961,20 @@ select:focus {
 }
 
 .prc-box--img {
-    background: linear-gradient(135deg, rgba(107, 64, 247, .2), rgba(49, 106, 255, .3));
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: var(--radius, 16px);
+}
+.prc-box--img img {
+    object-fit: cover;
+    border-radius: 8px;
 }
 
+.prc-box--img.is-loaded {
+    filter: none;
+    transition: filter 300ms ease-out;
+}
 
 /* ========= Pricing Cards ========= */
 .prc-plans {
