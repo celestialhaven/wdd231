@@ -1,5 +1,9 @@
 @media (max-width:1024px) {
 
+    .hero-title {
+            font-size: 45px;
+        }
+
     .section-title {
         font-size: 45px
     }
