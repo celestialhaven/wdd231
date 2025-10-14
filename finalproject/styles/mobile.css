@@ -1,7 +1,8 @@
 /* ≤767px */
 @media (max-width:767px) {
 
-    .services .container {
+    .services .container,
+    .testimonials .container {
         width: 96%
     }
 
@@ -43,6 +44,11 @@
 
     .service-card .media {
         height: 300px
+    }
+
+    .icon-grid {
+        display: flex;
+        flex-direction: column;
     }
 }
 
