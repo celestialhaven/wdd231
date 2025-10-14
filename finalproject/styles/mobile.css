@@ -3,15 +3,19 @@
 
     .services .container,
     .testimonials .container {
-        width: 96%
+        width: 96%;
     }
 
-    .hero-title {
-        font-size: 40px
+    .brand {
+        font-size: 22px;
     }
 
     .container .section-title {
-        font-size: 30px
+        font-size: 30px;
+    }
+
+    .container-contact p {
+        width: 95%;
     }
 
     .hero .container, .why .container, .dark-slab .container, .contact .container {
@@ -24,30 +28,30 @@
         justify-content: center;
         align-items: center;
         text-align: center;
-        width: 100%
+        width: 100%;
     }
 
     h5 {
-        text-align: center
+        text-align: center;
     }
 
     .footer-col .btn {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center
+        align-items: center;
     }
 
     .site-footer .footer-brand {
-        width: 100%
+        width: 100%;
     }
 
     .prc-grid {
-        grid-template-columns: 1fr
+        grid-template-columns: 1fr;
     }
 
     .service-card .media {
-        height: 300px
+        height: 300px;
     }
 
     .icon-grid {
@@ -79,10 +83,10 @@
 @media (max-width:640px) {
 
     .subtext {
-        font-size: 16px
+        font-size: 16px;
     }
 
     .hero .btn {
-        margin: 20px
+        margin: 20px;
     }
 }

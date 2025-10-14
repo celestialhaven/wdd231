@@ -1011,3 +1011,15 @@ select:focus {
     font-size: 18px;
     color: var(--violet);
 }
+
+.container-contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 20px;
+}
+
+.container-contact p {
+    width: 75%;
+}
