@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<!DOCTYPE html>
-<html lang="en">
 
 <head>
+    <!-- =======================================================
+       META / HEAD
+       ======================================================= -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Jones G. Mabala">
-    <title>Celestial Virtual Assistant Agency</title>
-    <meta name="description"
-        content="Create a user-friendly product review form to collect customer feedback, ratings, and comments for better product insights.">
 
-    <link rel="icon" href="images/favicon.ico" sizes="any">
-    
+    <!-- Author & Title -->
+    <meta name="author" content="Celestial VA Agency - Jones G. Mabala">
+    <title>Celestial Virtual Assistant Agency — Submission Received</title>
+
+    <!-- Primary Description (removed the unrelated/duplicate one) -->
     <meta name="description"
-        content="Celestial VA Agency provides professional virtual assistant services — helping entrepreneurs, creators, and business owners save time, stay organized, and scale efficiently." />
-    <meta name="author" content="Celestial VA Agency - Jones Mabala">
-    
+        content="Submission received. Celestial VA Agency will review your message and get back to you shortly.">
+
+    <!-- Open Graph for sharing (optional but nice to keep) -->
     <meta property="og:title" content="Celestial VA Agency – Your Trusted Virtual Assistant Partner">
     <meta property="og:description"
         content="Experience seamless support with Celestial VA Agency. We specialize in admin management, client communication, scheduling, and business productivity for busy professionals." />
@@ -25,26 +25,36 @@
     <meta property="og:url" content="https://celestialvaagency.com/">
     <meta property="og:type" content="website">
 
-    
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico" sizes="any">
+
+    <!-- Styles -->
     <link rel="stylesheet" href="styles/project.css">
     <link rel="stylesheet" href="styles/laptop.css">
     <link rel="stylesheet" href="styles/tablet.css">
     <link rel="stylesheet" href="styles/mobile.css">
+
+    <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&family=Poppins:wght@400;600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
+    <!-- Scripts (defer for non-blocking) -->
     <script src="scripts/project.js" defer></script>
     <script src="scripts/submitted.js" defer></script>
 </head>
 
 <body>
-
+    <!-- =======================================================
+       HEADER / NAV
+       - Brand links to Home for usability
+       - Primary nav mirrors your main site
+       ======================================================= -->
     <header class="site-header">
         <div class="container">
-            <div class="brand">Celestial VA Agency</div>
+            <a class="brand" href="home.html">Celestial VA Agency</a>
 
             <button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Open menu">
                 <span class="nav-toggle-bar"></span>
@@ -56,60 +66,81 @@
                 <a href="home.html">Home</a>
                 <a href="pricing-plans.html">Pricing Plans</a>
                 <a href="contact-us.html" class="cta-link">Contact Us</a>
-                <a class="btn btn-primary btn-small header-cta" href="contact-us.html">Let's Get Started</a>
+                <a class="btn btn-primary btn-small header-cta" href="contact-us.html">Let’s Get Started</a>
             </nav>
         </div>
-    
         <div class="nav-scrim" hidden></div>
     </header>
+
     <main>
-        <div class="submitted-container">
-            <h1>Thank You!</h1>
-            <p>You have successfully submitted a form to us.<br>We’ll contact you as soon as possible.</p>
-            <div class="details" id="submissionDetails"></div>
-        </div>
+        <!-- =======================================================
+         SUBMISSION CONFIRMATION
+         - submitted.js can hydrate #submissionDetails from storage
+         ======================================================= -->
+        <section class="submitted-container" aria-labelledby="thanks-title">
+            <div class="container">
+                <h1 id="thanks-title">Thank You!</h1>
+                <p>
+                    Your form was submitted successfully.<br />
+                    We’ll contact you as soon as possible.
+                </p>
+                <!-- submitted.js: render name/email/service/message + sentToServer flag -->
+                <div class="details" id="submissionDetails"></div>
+            </div>
+        </section>
     </main>
+
+    <!-- =======================================================
+       FOOTER
+       - Keep service names consistent (“Web Design”, “Targeted Ads”)
+       - Use real page links (avoid # anchors if not on this page)
+       ======================================================= -->
     <footer class="site-footer">
         <div class="container footer-grid">
             <div class="footer-brand">
                 <div class="brand">Celestial VA Agency</div>
-                <p>Short about text goes here. Keep it brief and helpful for visitors.</p>
+                <p>Professional virtual assistant services to streamline your work and grow your business.</p>
             </div>
+
             <div class="footer-col">
                 <h5>Services</h5>
                 <ul>
-                    <li><a href="#">CRM</a></li>
-                    <li><a href="#">Web Designing</a></li>
-                    <li><a href="#">Social Media Marketing</a></li>
-                    <li><a href="#">Professional Video Editing</a></li>
-                    <li><a href="#">SEO</a></li>
-                    <li><a href="#">Targeted Ads</a></li>
+                    <li><a href="pricing-plans.html">CRM</a></li>
+                    <li><a href="pricing-plans.html">Web Design</a></li>
+                    <li><a href="pricing-plans.html">Social Media Marketing</a></li>
+                    <li><a href="pricing-plans.html">Professional Video Editing</a></li>
+                    <li><a href="pricing-plans.html">SEO</a></li>
+                    <li><a href="pricing-plans.html">Targeted Ads</a></li>
                 </ul>
             </div>
+
             <div class="footer-col">
                 <h5>Quick Links</h5>
                 <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#contact">Contact Us</a></li>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="contact-us.html">Contact Us</a></li>
                 </ul>
             </div>
+
             <div class="footer-col">
                 <h5>Social Media</h5>
                 <ul class="socials">
-                    <li><a href="#"><i class="fa-brands fa-x-twitter"></i> Twitter</a></li>
-                    <li><a href="#"><i class="fa-brands fa-youtube"></i> YouTube</a></li>
-                    <li><a href="#"><i class="fa-brands fa-facebook"></i> Facebook</a></li>
+                    <li><a href="#"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i> Twitter</a></li>
+                    <li><a href="#"><i class="fa-brands fa-youtube" aria-hidden="true"></i> YouTube</a></li>
+                    <li><a href="#"><i class="fa-brands fa-facebook" aria-hidden="true"></i> Facebook</a></li>
                 </ul>
                 <a class="btn btn-small btn-outline" href="mailto:support@domain.com">support@domain.com</a>
             </div>
         </div>
+
         <div class="legal">
             <div class="container">
-                <span>© 2025 Company</span>
+                <!-- Tip: auto-fill with JS (id=currentyear) if you prefer -->
+                <span>© 2025 Celestial VA Agency</span>
                 <span>SEO and Web Design by Contact Designer</span>
             </div>
         </div>
     </footer>
 </body>
+
 </html>

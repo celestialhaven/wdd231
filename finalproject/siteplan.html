@@ -2,46 +2,76 @@
 <html lang="en">
 
 <head>
+    <!-- =========================
+       META / HEAD
+       ========================= -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Virutal Assistant Agency</title>
-    <meta name="description" content="Site plan for Virtual Assistant Agency Design">
+    <title>Virtual Assistant Agency — Site Plan</title>
+    <meta name="description" content="Site plan for Virtual Assistant Agency design.">
+
+    <!-- Styles -->
     <link rel="stylesheet" href="styles/siteplan-style.css">
+
+    <!-- Fonts: one preconnect set + combined families -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Montserrat:ital@0;1&display=swap"
+        rel="stylesheet">
+
+    <!-- Page JS (deferred) -->
     <script src="scripts/script.js" defer></script>
 </head>
 
 <body>
+    <!-- =========================
+       HEADER
+       ========================= -->
     <header>
         <h1>Site Plan</h1>
     </header>
+
+    <!-- =========================
+       MAIN CONTENT
+       - High-level site plan sections
+       ========================= -->
     <main>
         <div class="main-container">
-            <div class="site-name">
+            <!-- ===== Site Name / Brand Statement ===== -->
+            <section class="site-name">
                 <h2>Virtual Assistant Agency</h2>
-                <p>This name represents a virtual assistant agency dedicated to helping busy professionals reclaim their
-                    time by providing
-                    reliable, remote administrative and business support services.</p>
-            </div>
-            <div class="site-purpose">
+                <p>
+                    This name represents a virtual assistant agency dedicated to helping busy professionals reclaim
+                    their time by
+                    providing reliable, remote administrative and business support services.
+                </p>
+            </section>
+
+            <!-- ===== Purpose / Value Proposition ===== -->
+            <section class="site-purpose">
                 <h2>Site Purpose</h2>
-                <p>Our website is designed to showcase professional virtual assistant services that help busy
-                    entrepreneurs and businesses
-                    save time, stay organized, and focus on growth by outsourcing everyday tasks to reliable remote
-                    experts.</p>
-            </div>
-            <div class="scenarios">
+                <p>
+                    Our website is designed to showcase professional virtual assistant services that help busy
+                    entrepreneurs and
+                    businesses save time, stay organized, and focus on growth by outsourcing everyday tasks to reliable
+                    remote
+                    experts.
+                </p>
+            </section>
+
+            <!-- ===== User Scenarios / FAQs ===== -->
+            <section class="scenarios">
                 <h2>Scenarios</h2>
-                <p>1. How can a virtual assistant help me save time and grow my small business?.</p>
-                <p>2. What kind of tasks can I delegate to your virtual assistants, and how do I get started?.</p>
-            </div>
-            <div class="color-schema">
-                <h2>Color Schema</h2>
+                <p>1. How can a virtual assistant help me save time and grow my small business?</p>
+                <p>2. What tasks can I delegate to your virtual assistants, and how do I get started?</p>
+            </section>
+
+            <!-- ===== Color Palette =====
+           Note: kept class "color-schema" to avoid breaking CSS,
+           but header text uses preferred term "Color Scheme".
+      -->
+            <section class="color-schema">
+                <h2>Color Scheme</h2>
                 <div class="schema-container">
                     <div class="schema-1">
                         <p>#316aff</p>
@@ -53,45 +83,63 @@
                         <p>#101012</p>
                     </div>
                 </div>
-            </div>
-            <div class="typography">
+            </section>
+
+            <!-- ===== Typography Samples ===== -->
+            <section class="typography">
                 <h2>Typography</h2>
                 <div class="typo-samples">
                     <div class="font-container">
-                        <p>Main Font: Poppins 400:600</p>
-                        <p>Paragraph Font: Montserrat 400:500</p>
+                        <p>Main Font: Poppins 400/600</p>
+                        <p>Paragraph Font: Montserrat 400/500</p>
                     </div>
+
+                    <!-- Inline styles purely for quick visual demo -->
                     <div class="font-samples">
-                        <h2 style="font-size: 35px; font-weight: 600;">Main Font Style:600</h2>
-                        <h2 style="font-size: 25px; font-weight: 400;">Sub Heading Font Style:400</h2>
-                        <p style="font-size: 18px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic
-                            obcaecati nihil, eligendi quibusdam saepe aut minima amet fugiat dignissimos reiciendis
-                            labore maiores tempora eos non, accusantium explicabo culpa maxime esse.</p>
+                        <h2 style="font-size: 35px; font-weight: 600;">Main Heading (600)</h2>
+                        <h2 style="font-size: 25px; font-weight: 400;">Subheading (400)</h2>
+                        <p style="font-size: 18px;">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic obcaecati nihil, eligendi
+                            quibusdam saepe
+                            aut minima amet fugiat dignissimos reiciendis labore maiores tempora eos non, accusantium
+                            explicabo culpa
+                            maxime esse.
+                        </p>
                     </div>
                 </div>
-            </div>
-            <div class="wireframe">
+            </section>
+
+            <!-- ===== Wireframes =====
+           NOTE: original class "wirefram-image" had a typo.
+           Changed to "wireframe-image". Update CSS if it referenced the old class.
+      -->
+            <section class="wireframe">
                 <h2>Wireframe</h2>
-                <div class="wirefram-image">
-                    <img src="images/site-plan.drawio.png" alt="Landing Page" class="preview"
-                        data-description="Wireframe of the main Landing Page" loading="lazy">
-                    <img src="images/services-plan.png" alt="Services Plan Page" class="preview"
-                        data-description="Structure of the Services Plan layout" loading="lazy">
-                    <img src="images/about-us.png" alt="About Us Page" class="preview"
-                        data-description="Design of the About Us section" loading="lazy">
-                    <img src="images/pricing-plans.png" alt="Pricing Plans Page" class="preview"
-                        data-description="Pricing Plans visual layout" loading="lazy">
-                    <img src="images/contact-us.png" alt="Contact Us Page" class="preview"
-                        data-description="Form and contact info layout" loading="lazy">
-                    <img src="images/site-plan-mobile.png" alt="Site Plan Mobile view" class="preview"
-                        data-description="Mobile view of the site wireframe" loading="lazy">
+                <div class="wireframe-image">
+                    <img src="images/site-plan.drawio.png" alt="Wireframe: main landing page layout" class="preview"
+                        data-description="Wireframe of the main Landing Page" loading="lazy" />
+                    <img src="images/services-plan.png" alt="Wireframe: services plan page" class="preview"
+                        data-description="Structure of the Services Plan layout" loading="lazy" />
+                    <img src="images/about-us.png" alt="Wireframe: About Us page" class="preview"
+                        data-description="Design of the About Us section" loading="lazy" />
+                    <img src="images/pricing-plans.png" alt="Wireframe: pricing plans page" class="preview"
+                        data-description="Pricing Plans visual layout" loading="lazy" />
+                    <img src="images/contact-us.png" alt="Wireframe: contact page" class="preview"
+                        data-description="Form and contact info layout" loading="lazy" />
+                    <img src="images/site-plan-mobile.png" alt="Wireframe: mobile view of the site" class="preview"
+                        data-description="Mobile view of the site wireframe" loading="lazy" />
                 </div>
-            </div>
-            <div id="lightbox" class="lightbox">
-                <span class="close">&times;</span>
-                <img class="lightbox-content" id="lightbox-img" alt="close icon for view image"
-                    src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" loading="lazy">
-                <div id="lightbox-caption" class="lightbox-caption"></div>
+            </section>
+
+            <!-- ===== Lightbox (paired with your JS) =====
+           - aria-modal & role improve accessibility
+           - img alt left empty; caption conveys content
+      -->
+            <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-labelledby="lightbox-caption">
+                <button class="close" aria-label="Close">&times;</button>
+                <img class="lightbox-content" id="lightbox-img" alt=""
+                    src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" />
+                <div id="lightbox-caption" class="lightbox-caption" aria-live="polite"></div>
             </div>
         </div>
     </main>

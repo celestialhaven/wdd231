@@ -2,19 +2,23 @@
 <html lang="en">
 
 <head>
+    <!-- ==============================
+       HEAD / META
+       ============================== -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Jones G. Mabala">
-    <title>Celestial Virtual Assistant Agency</title>
-    <meta name="description"
-        content="Create a user-friendly product review form to collect customer feedback, ratings, and comments for better product insights.">
 
-    <link rel="icon" href="images/favicon.ico" sizes="any">
-    
+    <meta name="author" content="Celestial VA Agency - Jones G. Mabala">
+    <title>Celestial Virtual Assistant Agency — Pricing Plans</title>
+
+    <!-- Primary description for THIS page -->
     <meta name="description"
-        content="Celestial VA Agency provides professional virtual assistant services — helping entrepreneurs, creators, and business owners save time, stay organized, and scale efficiently." />
-    <meta name="author" content="Celestial VA Agency - Jones Mabala">
-    
+        content="Explore flexible pricing plans for Celestial VA Agency — transparent monthly and annual options plus project-based packages for web design.">
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico" sizes="any">
+
+    <!-- Open Graph (OK to keep for sharing) -->
     <meta property="og:title" content="Celestial VA Agency – Your Trusted Virtual Assistant Partner">
     <meta property="og:description"
         content="Experience seamless support with Celestial VA Agency. We specialize in admin management, client communication, scheduling, and business productivity for busy professionals." />
@@ -23,21 +27,28 @@
     <meta property="og:url" content="https://celestialvaagency.com/">
     <meta property="og:type" content="website">
 
-
+    <!-- Styles -->
     <link rel="stylesheet" href="styles/project.css">
     <link rel="stylesheet" href="styles/laptop.css">
     <link rel="stylesheet" href="styles/tablet.css">
     <link rel="stylesheet" href="styles/mobile.css">
+
+    <!-- Fonts (combined families recommended; kept as-is if already cached elsewhere) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&family=Poppins:wght@400;600&display=swap"
         rel="stylesheet">
+
+    <!-- Scripts (defer) -->
     <script src="scripts/project.js" defer></script>
     <script src="scripts/price.js" defer></script>
 </head>
 
 <body>
-
+    <!-- ==============================
+       HEADER / NAV
+       - Consider making brand a link to home for UX
+       ============================== -->
     <header class="site-header">
         <div class="container">
             <div class="brand">Celestial VA Agency</div>
@@ -50,23 +61,36 @@
 
             <nav class="nav" id="primary-nav" aria-label="Primary">
                 <a href="home.html">Home</a>
-                <a href="pricing-plans.html">Pricing Plans</a>
+                <a href="pricing-plans.html" aria-current="page">Pricing Plans</a>
                 <a href="contact-us.html" class="cta-link">Contact Us</a>
-                <a class="btn btn-primary btn-small header-cta" href="contact-us.html">Let's Get Started</a>
-            </nav>        
+                <a class="btn btn-primary btn-small header-cta" href="contact-us.html">Let’s Get Started</a>
+            </nav>
         </div>
 
         <div class="nav-scrim" hidden></div>
     </header>
+
+    <!-- ==============================
+       MAIN
+       - Inline margins preserved; recommend moving to CSS
+       ============================== -->
     <main style="margin-top: 120px; margin-bottom: 120px;">
         <section id="services" class="services">
             <div class="container">
                 <p class="eyebrow">Pricing Plans</p>
                 <h2 class="section-title">Our Pricing Plans, Made Just for You</h2>
-                <p class="section-subtext">Explore our flexible pricing plans designed to fit your needs, offering exceptional value, transparent costs, and
-                scalable options for businesses of all sizes.</p>
+                <p class="section-subtext">
+                    Explore our flexible pricing plans designed to fit your needs, offering exceptional value,
+                    transparent costs,
+                    and scalable options for businesses of all sizes.
+                </p>
+
                 <div class="prc-wrap">
-                
+                    <!-- ==============================
+               SUBSCRIPTION PRICING (Monthly/Annual)
+               - Toggle wired to scripts/price.js (billToggle)
+               - price elements must have data-month / data-year
+               ============================== -->
                     <section class="prc-section" id="subscription">
                         <div class="prc-head">
                             <div class="prc-toggle" aria-live="polite">
@@ -78,51 +102,59 @@
                                 <span>Annual <span class="prc-badge">Save 15%</span></span>
                             </div>
                         </div>
-                
-                        <div class="prc-grid">
 
-                            <figure class="prc-box prc-box--img" style="background:url('images/SEO.webp') center/cover no-repeat;"
+                        <div class="prc-grid">
+                            <!-- Decorative illustration -->
+                            <figure class="prc-box prc-box--img"
+                                style="background:url('images/SEO.webp') center/cover no-repeat;"
                                 aria-label="Illustration"></figure>
-                
+
+                            <!-- Plans list -->
                             <div class="prc-box" aria-label="Pricing Plans">
                                 <div class="prc-plans" id="plansList">
-
+                                    <!-- NOTE: Displayed fallback values ($29/$79/$149) looked like placeholders.
+                       Updated to match data-month defaults for consistency. -->
                                     <div class="prc-card">
                                         <div>
                                             <div class="name">Starter</div>
                                             <div class="prc-note">Great for trying things out</div>
                                         </div>
-                                        <div class="price" data-month="$500/mo" data-year="$5,100/yr">$29/mo</div>
+                                        <div class="price" data-month="$500/mo" data-year="$5,100/yr">$500/mo</div>
                                     </div>
-                
+
                                     <div class="prc-card">
                                         <div>
                                             <div class="name">Growth</div>
                                             <div class="prc-note">For small teams</div>
                                         </div>
-                                        <div class="price" data-month="$650/mo" data-year="$6,630/yr">$79/mo</div>
+                                        <div class="price" data-month="$650/mo" data-year="$6,630/yr">$650/mo</div>
                                     </div>
-                
+
                                     <div class="prc-card">
                                         <div>
                                             <div class="name">Scale</div>
-                                            <div class="prc-note">Advanced support & features</div>
+                                            <div class="prc-note">Advanced support &amp; features</div>
                                         </div>
-                                        <div class="price" data-month="$800/mo" data-year="$8,160/yr">$149/mo</div>
+                                        <div class="price" data-month="$800/mo" data-year="$8,160/yr">$800/mo</div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </section>
-                
+
+                    <!-- ==============================
+               PROJECT-BASED PRICING (Web Design)
+               - Heading grammar fixed: Project-Based
+               - If the filename is actually "web-designing.webp",
+                 update the path accordingly (see note below)
+               ============================== -->
                     <section class="prc-section" id="project-base">
                         <div class="prc-head">
-                            <h2 class="prc-title">Project Base</h2>
+                            <h2 class="prc-title">Project-Based</h2>
                             <p class="prc-sub">For Web Design Only</p>
                         </div>
-                
-                        <div class="prc-grid">
 
+                        <div class="prc-grid">
                             <div class="prc-box" aria-label="Project Pricing Plans">
                                 <div class="prc-plans">
                                     <div class="prc-card">
@@ -132,7 +164,7 @@
                                         </div>
                                         <div class="price">$499</div>
                                     </div>
-                
+
                                     <div class="prc-card">
                                         <div>
                                             <div class="name">Business Site</div>
@@ -140,7 +172,7 @@
                                         </div>
                                         <div class="price">$1,499</div>
                                     </div>
-                
+
                                     <div class="prc-card">
                                         <div>
                                             <div class="name">E-commerce</div>
@@ -150,33 +182,43 @@
                                     </div>
                                 </div>
                             </div>
-                
-                            <figure class="prc-box prc-box--img" style="background:url('images/web-designin.webp') center/cover no-repeat;"
+
+                            <!-- Filename note: original was 'web-designin.webp' (likely a typo).
+                   If your actual asset is spelled that way, keep it; otherwise
+                   rename the file to 'web-designing.webp' and update path. -->
+                            <figure class="prc-box prc-box--img"
+                                style="background:url('images/web-designin.webp') center/cover no-repeat;"
                                 aria-label="Illustration"></figure>
                         </div>
                     </section>
-                
                 </div>
             </div>
         </section>
     </main>
+
+    <!-- ==============================
+       FOOTER
+       - Service label “Web Designing” → “Web Design” (typo/usage)
+       ============================== -->
     <footer class="site-footer">
         <div class="container footer-grid">
             <div class="footer-brand">
                 <div class="brand">Celestial VA Agency</div>
-                <p>Short about text goes here. Keep it brief and helpful for visitors.</p>
+                <p>Professional virtual assistant services to streamline your work and grow your business.</p>
             </div>
+
             <div class="footer-col">
                 <h5>Services</h5>
                 <ul>
                     <li><a href="pricing-plans.html">CRM</a></li>
-                    <li><a href="pricing-plans.html">Web Designing</a></li>
+                    <li><a href="pricing-plans.html">Web Design</a></li>
                     <li><a href="pricing-plans.html">Social Media Marketing</a></li>
                     <li><a href="pricing-plans.html">Professional Video Editing</a></li>
                     <li><a href="pricing-plans.html">SEO</a></li>
                     <li><a href="pricing-plans.html">Targeted Ads</a></li>
                 </ul>
             </div>
+
             <div class="footer-col">
                 <h5>Quick Links</h5>
                 <ul>
@@ -184,16 +226,18 @@
                     <li><a href="contact-us.html">Contact Us</a></li>
                 </ul>
             </div>
+
             <div class="footer-col">
                 <h5>Social Media</h5>
                 <ul class="socials">
-                    <li><a href="#"><i class="fa-brands fa-x-twitter"></i> Twitter</a></li>
-                    <li><a href="#"><i class="fa-brands fa-youtube"></i> YouTube</a></li>
-                    <li><a href="#"><i class="fa-brands fa-facebook"></i> Facebook</a></li>
+                    <li><a href="#"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i> Twitter</a></li>
+                    <li><a href="#"><i class="fa-brands fa-youtube" aria-hidden="true"></i> YouTube</a></li>
+                    <li><a href="#"><i class="fa-brands fa-facebook" aria-hidden="true"></i> Facebook</a></li>
                 </ul>
                 <a class="btn btn-small btn-outline" href="mailto:support@domain.com">support@domain.com</a>
             </div>
         </div>
+
         <div class="legal">
             <div class="container">
                 <span>© 2025 Company</span>
@@ -202,4 +246,5 @@
         </div>
     </footer>
 </body>
+
 </html>
