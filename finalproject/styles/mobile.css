@@ -6,6 +6,10 @@
         width: 96%;
     }
 
+    .hero-title {
+        font-size: 45px;
+    }
+
     .brand {
         font-size: 22px;
     }
@@ -64,9 +68,6 @@
     }
 
     .carousel-wrapper {
-        width: 100%;
-        display: flex;
-        overflow: hidden;
         scroll-snap-type: x mandatory;
         padding: 0;
     }
