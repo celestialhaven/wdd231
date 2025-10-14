@@ -9,11 +9,10 @@
   const header = document.querySelector('.site-header');
   const toggle = header?.querySelector('.nav-toggle');       // Button that opens/closes the menu
   const nav    = document.getElementById('primary-nav');     // Main nav container (focus trap lives here)
-  const scrim  = header?.querySelector('.nav-scrim');        // Overlay behind the menu
   const DESKTOP = 900;                                       // px breakpoint where menu should auto-close
 
   // If any critical element is missing, bail early
-  if (!header || !toggle || !nav || !scrim) return;
+  if (!header || !toggle || !nav ) return;
 
   // Helpers for menu state and scroll locking
   const isOpen = () => body.classList.contains('menu-open');
@@ -25,7 +24,6 @@
     body.classList.add('menu-open');
     toggle.setAttribute('aria-expanded','true');             // Better a11y for assistive tech
     toggle.setAttribute('aria-label','Close menu');
-    scrim.hidden = false;
     lock();
 
     // Move focus to the first focusable element in the nav (prevents focus loss)
@@ -40,7 +38,6 @@
     body.classList.remove('menu-open');
     toggle.setAttribute('aria-expanded','false');
     toggle.setAttribute('aria-label','Open menu');
-    scrim.hidden = true;
     unlock();
 
     // Stop focus trap and return focus to the toggle for logical focus order
@@ -53,7 +50,6 @@
 
   // Wire up open/close interactions
   toggle.addEventListener('click', toggleMenu);              // Main toggle button
-  scrim.addEventListener('click', closeMenu);                // Click outside to close
   nav.querySelectorAll('a').forEach(a =>                     // Navigating to a link closes the menu
     a.addEventListener('click', closeMenu)
   );
