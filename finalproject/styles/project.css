@@ -1,11 +1,11 @@
 /* ---------- Theme ---------- */
 :root {
-    --blue: #316aff;
-    --violet: #6b40f7;
+    --blue: #2c5ee6;
+    --violet: #5932e0;
     --dark: #101012;
     --light: #f4f6fb;
     --text: #e9ecf5;
-    --muted: #b9c0d6;
+    --muted: #8f97b3;
     --radius: 16px;
     --shadow: 0 10px 30px rgba(0, 0, 0, .25);
 }
