@@ -120,12 +120,6 @@ a {
     padding: 0 120px
 }
 
-.nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 32px
-}
 
 .nav a {
     color: #e9ecf5;
@@ -136,19 +130,6 @@ a {
 
 .nav a:hover {
     opacity: 1
-}
-
-.header-cta,
-.menu-cta {
-    display: inline-block;
-    padding: 10px 18px;
-    border-radius: 4px;
-    background: linear-gradient(90deg, var(--blue), var(--violet));
-    color: #fff;
-    font-weight: 600;
-    text-decoration: none;
-    border: 1px solid rgba(255, 255, 255, .08);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, .25)
 }
 
 .nav-toggle {
@@ -185,31 +166,6 @@ a {
 }
 
 /* ========= HERO ========= */
-.hero {
-    padding: 80px 0 40px;
-    background: radial-gradient(1200px 1200px at center top, rgba(107, 64, 247, .25), transparent 60%)
-}
-
-.hero .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 70%;
-    padding-top: 150px
-}
-
-.eyebrow {
-    letter-spacing: .2em;
-    text-transform: uppercase;
-    font-size: 12px;
-    color: var(--muted);
-    margin-bottom: 10px
-}
-
-.eyebrow {
-    font-size: 20px
-}
 
 .hero-title {
     font-size: 65px;
@@ -223,18 +179,6 @@ a {
     text-align: center;
     font-size: 18px;
     padding-top: 20px
-}
-
-.hero .btn {
-    margin: 18px 0 60px;
-    padding: 12px 40px
-}
-
-.hero-image {
-    display: block;
-    width: 100%;
-    height: auto;
-    overflow: hidden
 }
 
 .hero-image img {
@@ -316,21 +260,12 @@ a {
     padding: 60px 0
 }
 
-.why .container,
-.dark-slab .container,
-.contact .container {
+.why .container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 70%
-}
-
-.icon-grid {
-    margin-top: 24px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px
 }
 
 .icon-card {
@@ -387,59 +322,6 @@ a {
     padding: 60px 0
 }
 
-.carousel {
-    display: flex;
-    gap: 16px;
-    transition: transform .4s ease-in-out;
-    will-change: transform
-}
-
-.carousel-wrapper {
-    position: relative;
-    margin: 0 auto;
-    border-radius: 4px;
-    box-shadow: var(--shadow);
-    padding: 12px
-}
-
-.testimonials .card,
-.carousel .card {
-    display: block;
-    flex: 0 0 33.333%;
-    box-sizing: border-box;
-    padding: 70px 25px;
-    border-radius: 4px;
-    text-align: center;
-    background: #171920;
-    color: var(--text);
-    box-shadow: var(--shadow);
-    margin: 0;
-    border: 1px solid rgba(255, 255, 255, .06)
-}
-
-.testimonials .card h4,
-.carousel .card h4 {
-    margin: 10px 0 6px;
-    color: var(--text)
-}
-
-.testimonials .card p,
-.carousel .card p {
-    margin: 0;
-    color: var(--muted);
-    line-height: 1.5
-}
-
-.testimonials .card img,
-.carousel .card img {
-    width: 84px;
-    height: 84px;
-    border-radius: 60px;
-    margin-bottom: 12px;
-    border: 3px solid var(--violet);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, .4)
-}
-
 .prev,
 .next {
     position: absolute;
@@ -484,29 +366,6 @@ a {
     text-align: center
 }
 
-.contact-form {
-    margin: 26px auto 0;
-    max-width: 760px;
-    display: grid;
-    gap: 20px;
-    width: 100%
-}
-
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 14px 16px;
-    border-radius: 4px;
-    border: 1px solid rgba(255, 255, 255, .1);
-    background: #12131a;
-    color: #fff;
-    outline: 0
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-    border-color: var(--violet)
-}
 
 select {
     padding: 10px;
@@ -747,20 +606,8 @@ select:focus {
     width: 80%
 }
 
-.footer-grid {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between
-}
-
 .footer-col h5 {
     margin-bottom: 10px
-}
-
-.footer-col ul {
-    list-style: none;
-    margin: 0;
-    padding: 0
 }
 
 .footer-col li {
@@ -802,11 +649,6 @@ select:focus {
     padding: 2rem
 }
 
-.card {
-    background: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: rgba(0, 0, 0, .1) 0 1px 3px, rgba(0, 0, 0, .06) 0 1px 2px
-}
 
 .aboutMe {
     display: flex;

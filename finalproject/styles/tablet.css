@@ -1,9 +1,6 @@
 @media (max-width:1024px) {
-    .container .hero-title {
-        font-size: 50px
-    }
 
-    .container .section-title {
+    .section-title {
         font-size: 45px
     }
 
@@ -26,15 +23,6 @@
     .nav-toggle {
         display: inline-block;
         z-index: 1002
-    }
-
-    .header-cta {
-        display: none
-    }
-
-    .menu-cta {
-        display: block;
-        margin-top: 20px
     }
 
     .nav {
@@ -86,11 +74,6 @@
         padding: 0
     }
 
-    .icon-grid {
-        display: flex;
-        flex-direction: column
-    }
-
     .why .container {
         width: 94%
     }
@@ -104,25 +87,11 @@
         width: 100%
     }
 
-    .carousel .card,
-    .testimonials .card {
-        flex: 0 0 48%
-    }
-
-    .footer-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr
-    }
-
     .site-footer .footer-brand {
         width: 25%
     }
 
     .site-footer .container {
-        width: 100%
-    }
-
-    .footer-brand p {
         width: 100%
     }
 

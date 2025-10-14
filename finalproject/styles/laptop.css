@@ -1,14 +1,8 @@
 @media (max-width:1366px) {
-    .nav a {
-        font-size: 14px
-    }
-    
-    .hero .container,
+
     .services .container,
     .why .container,
-    .dark-slab .container,
-    .testimonials .container,
-    .contact .container {
+    .testimonials .container {
         width: 96%
     }
 

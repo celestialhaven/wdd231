@@ -1,31 +1,18 @@
 /* ≤767px */
 @media (max-width:767px) {
-    .hero {
-        padding: 20px
-    }
 
-    .hero .container,
     .services .container,
     .why .container,
-    .dark-slab .container,
-    .testimonials .container,
-    .contact .container {
+    .testimonials .container {
         width: 96%
     }
 
-    .container .hero-title {
+    .hero-title {
         font-size: 40px
     }
 
     .container .section-title {
         font-size: 30px
-    }
-
-    .footer-grid {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 20px
     }
 
     .footer-brand {
@@ -37,17 +24,8 @@
         width: 100%
     }
 
-    .container h5 {
+    h5 {
         text-align: center
-    }
-
-    .footer-col ul {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        row-gap: 5px;
-        column-gap: 20px
     }
 
     .footer-col .btn {
@@ -57,18 +35,12 @@
         align-items: center
     }
 
-    .footer-brand p,
     .site-footer .footer-brand {
         width: 100%
     }
 
     .prc-grid {
         grid-template-columns: 1fr
-    }
-
-    .carousel .card,
-    .testimonials .card {
-        flex: 0 0 50%
     }
 
     .service-card .media {
@@ -78,13 +50,6 @@
 
 /* ≤640px */
 @media (max-width:640px) {
-    .hero {
-        padding: 0
-    }
-
-    .eyebrow {
-        font-size: 18px
-    }
 
     .subtext {
         font-size: 16px
@@ -92,9 +57,5 @@
 
     .hero .btn {
         margin: 20px
-    }
-
-    .hero-image {
-        height: 300px
     }
 }
