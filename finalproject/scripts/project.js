@@ -146,7 +146,7 @@ const SERVICES = [
     desc: "Boost your online presence with my personalized SEO strategies, driving targeted traffic and improving search rankings.",
     btn: "Learn More",
     href: "pricing-plans.html",
-    img: "images/SEO.webp",
+    img: "images/seo.webp",
     mediaText: "Search Engine Optimization"
   },
   {
