@@ -185,8 +185,8 @@ async function loadServices() {
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const services = await res.json();
     renderServices(services);
-  } catch (err) {
-    console.warn('Failed to fetch services; using fallback data.', err);
+  } catch (_err) {
+    // Silent fallback: no console output in production
     renderServices(SERVICES);
   }
 }
@@ -214,8 +214,8 @@ document.addEventListener('DOMContentLoaded', loadServices);
    - Persists last attempt (with sentToServer flag) in TEMP_KEY for thank-you page
    ========================================================= */
 (function () {
-  const LS_KEY = 'contactSubmissions';     // Offline queue for failed submissions
-  const TEMP_KEY = 'lastContactSubmission';// Singular record for immediate confirmation page
+  const LS_KEY = 'contactSubmissions';      // Offline queue for failed submissions
+  const TEMP_KEY = 'lastContactSubmission'; // Singular record for immediate confirmation page
 
   const form = document.getElementById('contactForm');
   if (!form) return;
@@ -253,12 +253,10 @@ document.addEventListener('DOMContentLoaded', loadServices);
       if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
 
       // Optionally consume the server response (ID, etc.)
-      const saved = await resp.json();
-      console.log('Server saved:', saved);
+      await resp.json();
       sentToServer = true;
-    } catch (err) {
-      // On failure, push to localStorage queue for future retry
-      console.warn('Network/server error; saving locally instead:', err);
+    } catch (_err) {
+      // On failure, push to localStorage queue for future retry (silent in production)
       const existing = JSON.parse(localStorage.getItem(LS_KEY) || '[]');
       existing.push(record);
       localStorage.setItem(LS_KEY, JSON.stringify(existing));
