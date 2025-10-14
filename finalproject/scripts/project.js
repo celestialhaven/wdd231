@@ -122,7 +122,7 @@ const SERVICES = [
     desc: "Crafting personalized, visually stunning, and user-friendly websites tailored to your brand, enhancing engagement and driving results.",
     btn: "Learn More",
     href: "pricing-plans.html",
-    img: "images/web-designin.webp",
+    img: "images/web-designing.webp",
     mediaText: "Web Design"
   },
   {
