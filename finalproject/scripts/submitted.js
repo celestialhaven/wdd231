@@ -1,36 +1,44 @@
 /* =========================================================
-   ACCESSIBLE BILLING TOGGLE (Monthly ↔ Annual)
-   - Updates all price elements dynamically based on toggle state
-   - Uses data attributes (data-month / data-year) for flexibility
+   BILLING TOGGLE SCRIPT (Monthly ↔ Annual)
+   ---------------------------------------------------------
+   • Dynamically updates pricing text based on toggle state.
+   • Uses data attributes (data-month / data-year) for flexibility.
+   • Includes safety checks to avoid errors on pages without pricing UI.
    ========================================================= */
 
-// Get references to the toggle switch and all price elements
-const toggle = document.getElementById('billToggle');
-const prices = document.querySelectorAll('#plansList .price');
+document.addEventListener('DOMContentLoaded', () => {
+  // 🔍 Get references to the billing toggle switch and all price elements
+  const toggle  = document.getElementById('billToggle');
+  const prices  = document.querySelectorAll('#plansList .price');
 
-/**
- * Updates the displayed price for each plan.
- * If the toggle is ON (checked), show yearly prices.
- * If OFF, show monthly prices.
- */
-function updatePrices() {
-  prices.forEach(p => {
-    const monthly = p.getAttribute('data-month');
-    const yearly  = p.getAttribute('data-year');
+  // 🛑 If this page doesn’t have the toggle or price elements, stop the script
+  if (!toggle || prices.length === 0) return;
 
-    // Defensive check: ensure both data attributes exist
-    if (!monthly || !yearly) {
-      console.warn('Missing data attributes on price element:', p);
-      return;
-    }
+  /**
+   * Updates the displayed prices for all pricing plan cards.
+   * - If the toggle is ON (checked), shows yearly prices.
+   * - If the toggle is OFF, shows monthly prices.
+   */
+  function updatePrices() {
+    prices.forEach(p => {
+      // Retrieve the stored monthly and yearly values from data attributes
+      const monthly = p.getAttribute('data-month');
+      const yearly  = p.getAttribute('data-year');
 
-    // Toggle determines which value to display
-    p.textContent = toggle.checked ? yearly : monthly;
-  });
-}
+      // ⚠️ Defensive check: warn if attributes are missing to help debugging
+      if (!monthly || !yearly) {
+        console.warn('Missing data-month or data-year attribute on:', p);
+        return;
+      }
 
-// Listen for toggle changes (user interaction)
-toggle.addEventListener('change', updatePrices);
+      // ✅ Set the text based on toggle state (checked = yearly)
+      p.textContent = toggle.checked ? yearly : monthly;
+    });
+  }
 
-// Initialize prices on page load
-updatePrices();
+  // 🎧 When user changes the toggle, update all visible prices
+  toggle.addEventListener('change', updatePrices);
+
+  // 🟢 Initialize displayed prices on page load
+  updatePrices();
+});
