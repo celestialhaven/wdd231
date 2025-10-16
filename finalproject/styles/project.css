@@ -862,20 +862,25 @@ select:focus {
 
 /* ========= Global Styles ========= */
 .prc-wrap {
+    display: flex;
+    flex-direction: column;
     font-family: "DM Sans", system-ui, Arial, sans-serif;
     color: var(--text);
     background: var(--dark);
-    padding: 40px 0;
 }
 
 .prc-section {
-    max-width: 1200px;
+    width: 100%;
     margin: 40px auto;
-    padding: clamp(20px, 3vw, 40px);
+    padding: 40px 20px;
     background: #12131a;
     border: 1px solid rgba(255, 255, 255, .06);
     border-radius: var(--radius);
     box-shadow: var(--shadow);
+}
+
+.project-base {
+    margin-top: 20px;
 }
 
 /* ========= Section Headers ========= */
@@ -958,13 +963,13 @@ select:focus {
 }
 
 .prc-box {
-    border-radius: var(--radius);
-    color: var(--text);
-    min-height: 280px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+    border-radius: var(--radius);
+    color: var(--text);
+    min-height: 280px;
     transition: transform 0.3s ease;
     padding: 20px;
 }
