@@ -733,6 +733,17 @@ select:focus {
     font-size: 45px;
 }
 
+.services .price-container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 120px;
+    
+  
+}
+
+#services {
+    padding: 20px;
+}
 
 /* -------------------- CAROUSEL --------------- */
 
