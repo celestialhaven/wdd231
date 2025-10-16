@@ -98,4 +98,11 @@
     .footer-col ul {
         text-align: center;
     }
+
+    .legal .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 }
