@@ -106,7 +106,16 @@
         align-items: center;
     }
 
-    .prc-section, .prc-box {
+    .prc-section {
         width: 100%;
+    }
+
+    .prc-box {
+        padding: 0;
+        background-color: transparent;
+    }
+
+    .price-container {
+        padding-top: 150px;
     }
 }

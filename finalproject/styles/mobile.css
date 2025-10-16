@@ -87,15 +87,3 @@
         font-size: 40px;
     }
 }
-
-/* ≤640px */
-@media (max-width:640px) {
-
-    .subtext {
-        font-size: 16px;
-    }
-
-    .hero .btn {
-        margin: 20px;
-    }
-}

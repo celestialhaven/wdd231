@@ -733,16 +733,17 @@ select:focus {
     font-size: 45px;
 }
 
-.services .price-container {
+.price-container {
     display: flex;
     flex-direction: column;
-    padding-top: 120px;
-    
-  
+    justify-content: center;
+    align-items: center;
+    padding-top: 200px;
 }
 
-#services {
-    padding: 20px;
+.price-services {
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 /* -------------------- CAROUSEL --------------- */
@@ -958,7 +959,6 @@ select:focus {
 
 .prc-box {
     border-radius: var(--radius);
-    background: var(--violet);
     color: var(--text);
     min-height: 280px;
     display: flex;
