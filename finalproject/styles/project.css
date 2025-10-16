@@ -121,6 +121,7 @@ a {
     font-size: 12px;
     color: var(--muted);
     margin-bottom: 10px;
+    text-align: center;
 }
 
 .hero-title {
@@ -406,6 +407,7 @@ a {
 }
 
 .footer-col h5 {
+    margin-top: 10px;
     margin-bottom: 10px;
 }
 
